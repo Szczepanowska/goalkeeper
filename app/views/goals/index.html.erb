@@ -1,8 +1,15 @@
-<h2>Goals</h2>
+<div class="container">
+  <div class="usercontainer d-flex">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <h1><%= current_user.email %></h1>
+    <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="goalscontainer ">
+    <h2>goals</h2>
+    <% @goals.each do |goal| %>
+      <%= goal.name %>
+    <% end %>
+  </div>
+</div>
 <%# goals div %>
-<div>
-<%# task div %>
-<h2>tasks</h2>
-<div>
-</div>
-</div>
