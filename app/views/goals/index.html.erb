@@ -1,3 +1,4 @@
+<%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="container">
   <div class="usercontainer d-flex">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
@@ -5,17 +6,27 @@
     <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary" %>
   </div>
 
+  <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer ">
     <h2>Goals</h2>
     <% @goals.each do |goal| %>
     <div class="card-product">
-      <img src="https://picsum.photos/200" />
+      <img src="https://picsum.photos/250" />
       <div class="card-product-infos">
         <h2> <%= goal.name %> </h2>
         <p><%= goal.description %></p>
+        <p></p>
+        <div class="tasks">
+          <ul>
+            <% goal.tasks.each do |task| %>
+              <li> <%= task.name %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
     <% end %>
   </div>
 </div>
-<%# goals div %>
+
+<%# .first(3) You can put this to the iterators to only display maybe 3 tasks %>
