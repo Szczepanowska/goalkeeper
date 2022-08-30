@@ -5,6 +5,17 @@
   <p>Progress: <%= @goal.status %></p>
   <p><%= @goal.start_date %></p>
   <p><%= @goal.end_date %></p>
+    <ul>
+        <% @goal.tasks.each do |task| %>
+        <li>
+          <p><%= task.name %></p>
+          <p><%= task.description %></p>
+          <p><%= task.status %></p>
+        </li>
+        <% end %>
+    </ul>
+  <br><br>
+  <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
   <br><br>
   <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
   <br><br>

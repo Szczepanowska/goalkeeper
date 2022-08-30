@@ -1,11 +1,15 @@
 class TasksController < ApplicationController
-  before_action :find_goal, only: [:create, :update, :destroy]
-  before_action :find_task, only: [:create, :edit, :update, :destroy]
+  before_action :find_goal, only: [:update, :destroy]
+  before_action :find_task, only: [:edit, :update, :destroy]
   def new
+    @goal = Goal.find(params[:goal_id])
     @task = Task.new
   end
 
   def create
+    @goal = Goal.find(params[:goal_id])
+    @task = Task.new(task_params)
+    @task.goal = @goal
     if @task.save
       redirect_to goal_path(@goal)
     else
