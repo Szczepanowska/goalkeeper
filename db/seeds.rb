@@ -23,12 +23,15 @@ emails.each do |email|
 
   puts "Creating goals..."
   5.times do
-    goal = Goal.create(name: Faker::Sports::Football.team, description: Faker::Address.full_address, category: "Diet", status: "In Progress", user: user)
+    goal = Goal.create(name: Faker::Sports::Football.team, description: Faker::Address.full_address, category: "Sport",
+                       status: "In Progress", user: user, start_date: Date.today,
+                       end_date: Faker::Date.between(from: '2022-09-23', to: '2023-02-25'))
     puts "Created #{goal.name}"
 
     puts "Creating tasks..."
     5.times do
-      Task.create(name: Faker::Sports::Football.player, description: Faker::Address.full_address, status: "In Progress", goal: goal)
+      Task.create(name: Faker::Sports::Football.player, description: Faker::Address.full_address, status: "In Progress",
+                  goal_id: goal.id)
       puts "Created #{task.name}"
     end
   end

@@ -1,4 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Profile Page with goals", goals_path, class: "btn btn-primary" %>
+  <%# iterating over goals and the tasks connected to this particular goal %>
+<div class="goalscontainer ">
+  <h2>Get inspired with other users aims:</h2>
+  <% @goals.each do |goal| %>
+    <%= link_to goal_path(goal) do  %>
+      <div class="card-product">
+        <img src="https://picsum.photos/250" />
+          <div class="card-product-infos">
+            <h2> <%= goal.name %> </h2>
+            <p><%= goal.description %></p>
+            <p></p>
+            <div class="tasks">
+              <ul>
+                <% goal.tasks.each do |task| %>
+                  <li> <%= task.name %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+      </div>
+</div>
