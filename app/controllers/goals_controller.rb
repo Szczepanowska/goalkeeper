@@ -1,6 +1,5 @@
 class GoalsController < ApplicationController
 
-
   def index
     @goals = current_user.goals
   end
@@ -19,6 +18,7 @@ class GoalsController < ApplicationController
       render :new
     end
   end
+
 
   private
 
