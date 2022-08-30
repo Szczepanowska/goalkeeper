@@ -5,6 +5,8 @@
   <p>Progress: <%= @goal.status %></p>
   <p><%= @goal.start_date %></p>
   <p><%= @goal.end_date %></p>
-
+  <br><br>
+  <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+  <br><br>
   <%= link_to "back", goals_path(@goal), class: "btn btn-primary" %>
 </div>
