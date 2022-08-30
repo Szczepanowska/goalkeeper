@@ -1,10 +1,9 @@
 class GoalsController < ApplicationController
 
-
   def index
     @goals = current_user.goals
   end
-  
+
   def new
     @goal = Goal.new
   end
@@ -20,10 +19,11 @@ class GoalsController < ApplicationController
     end
   end
 
+
   private
 
   def goal_params
     params.require(:goal).permit(:name, :description, :category, :start_date, :end_date)
-  end 
+  end
 
 end
