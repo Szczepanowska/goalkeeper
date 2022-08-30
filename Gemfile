@@ -21,6 +21,9 @@ gem "jsbundling-rails"
 # faker
 gem "faker"
 
+# meta-tags
+gem 'meta-tags'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
