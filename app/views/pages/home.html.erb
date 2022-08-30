@@ -1,18 +1,11 @@
 
-<div class="container">
-  <div class="usercontainer">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-    <h1><%= current_user.email %></h1>
-    <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary" %>
-  </div>
-
   <%# iterating over goals and the tasks connected to this particular goal %>
-  <div class="goalscontainer ">
-    <h2>Get inspired with other users aims:</h2>
-      <% @goals.each do |goal| %>
-      <%= link_to goal_path(goal) do  %>
-        <div class="card-product">
-          <img src="https://picsum.photos/250" />
+<div class="goalscontainer ">
+  <h2>Get inspired with other users aims:</h2>
+  <% @goals.each do |goal| %>
+    <%= link_to goal_path(goal) do  %>
+      <div class="card-product">
+        <img src="https://picsum.photos/250" />
           <div class="card-product-infos">
             <h2> <%= goal.name %> </h2>
             <p><%= goal.description %></p>
@@ -25,8 +18,8 @@
               </ul>
             </div>
           </div>
-        </div>
-      <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+      </div>
 </div>
