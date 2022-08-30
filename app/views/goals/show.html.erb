@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @goal.name %></h1>
+  <h2><%= @goal.description %></h2>
+  <p>Category: <%= @goal.category %></p>
+  <p>Progress: <%= @goal.status %></p>
+  <p><%= @goal.start_date %></p>
+  <p><%= @goal.end_date %></p>
+
+  <%= link_to "back", goals_path(@goal), class: "btn btn-primary" %>
+</div>

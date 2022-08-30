@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.new
+    @goal = Goal.find(params[:id])
   end
 
   def create
