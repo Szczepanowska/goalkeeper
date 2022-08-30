@@ -12,8 +12,8 @@ User.destroy_all
 Goal.destroy_all
 Task.destroy_all
 
-
-emails = [ "test@test.com" ]
+emails = ["test@test.com", "carlos.baez.fumero@gmail.com", "x.briglmeier@gmail.com", "szczepanowska.n@gmail.com",
+          "luizrmiug@gmail.com"]
 
 # generate random users
 puts "Creating users..."
