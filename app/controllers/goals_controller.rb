@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
 
   def index
     @goals = current_user.goals
+    @tasks = Task.find_by(goal_id: @goals)
   end
 
   def new
