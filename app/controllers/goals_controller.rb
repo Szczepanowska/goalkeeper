@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.new
+    @goal = Goal.find(params[:id])
   end
 
   def create
@@ -19,7 +19,7 @@ class GoalsController < ApplicationController
     @goal.user = current_user
 
     if @goal.save
-      redirect_to user_path(@goal.user)
+      redirect_to goals_path(@goal.user)
     else
       render :new
     end
@@ -30,7 +30,7 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-      redirect_to goal_path(@goal)
+      redirect_to goals_path(@goal)
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class GoalsController < ApplicationController
 
   def destroy
     @goal.destroy
-    redirect_to user_path(@goal.user)
+    redirect_to goals_path(@goal.user)
   end
 
   private
