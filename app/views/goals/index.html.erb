@@ -6,9 +6,15 @@
   </div>
 
   <div class="goalscontainer ">
-    <h2>goals</h2>
+    <h2>Goals</h2>
     <% @goals.each do |goal| %>
-      <%= goal.name %>
+    <div class="card-product">
+      <img src="https://picsum.photos/200" />
+      <div class="card-product-infos">
+        <h2> <%= goal.name %> </h2>
+        <p><%= goal.description %></p>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
