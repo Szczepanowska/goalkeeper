@@ -12,9 +12,6 @@ User.destroy_all
 Goal.destroy_all
 Task.destroy_all
 
-emails = ["carlos.baez.fumero@gmail.com", "x.briglmeier@gmail.com", "szczepanowska.n@gmail.com",
-          "luizrmiug@gmail.com"]
-
 users = [
   {
     email: "carlos.baez.fumero@gmail.com",
@@ -122,16 +119,7 @@ users = [
   }
 ]
 
-# Lifestyle Goals
-# Hobbys
-# 'Career'
-# 'Education'
-# Selfdevelopement
-# 'Sport'
-# 'Finances'
-# 'Health'
-
-# generate random users
+# generate users with goals and tasks
 puts "Creating users..."
 users.each do |user_input|
   user = User.create(email: user_input[:email], password: "123456", user_name: user_input[:user_name])
