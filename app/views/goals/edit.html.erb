@@ -1,0 +1,13 @@
+<div class="container">
+<h1>Edit <%= @goal.name %></h1>
+  <%= simple_form_for @goal do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :category, collection: Goal::CATEGORIES.map { |category| category[:name] } %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.button :submit, class: 'btn btn-success' %>
+  <% end %>
+  <br>
+  <%= link_to "back to goal", goal_path(@goal), class: "btn btn-primary" %>
+</div>
