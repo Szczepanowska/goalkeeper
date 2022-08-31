@@ -16,6 +16,7 @@
           <div class="card-product-infos">
             <h2> <%= goal.name %> </h2>
             <p><%= goal.description %></p>
+            <p><%= goal.likes.count %> <%= (goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
             <p></p>
             <div class="tasks">
               <ul>
