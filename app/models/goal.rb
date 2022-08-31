@@ -1,6 +1,7 @@
 class Goal < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
+  has_many :likes, dependent: :destroy
   CATEGORIES = [
     { name: 'Lifestyle', url: 'https://cdn-icons-png.flaticon.com/512/8260/8260455.png' },
     { name: 'Hobbys', url: 'https://cdn-icons-png.flaticon.com/512/8260/8260455.png' },

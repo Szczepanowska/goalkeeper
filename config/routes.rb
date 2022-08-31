@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :bookmarks
   resources :goals do
     resources :tasks
+    resources :likes
   end
 end
   # Defines the root path route ("/")
