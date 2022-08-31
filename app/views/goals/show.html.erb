@@ -11,6 +11,8 @@
           <p><%= task.name %></p>
           <p><%= task.description %></p>
           <p><%= task.status %></p>
+          <p><%= task.id %></p>
+          <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
         </li>
         <% end %>
     </ul>

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :find_goal, only: [:update, :destroy]
-  before_action :find_task, only: [:edit, :update, :destroy]
+  before_action :find_goal, only: [:update]
+  before_action :find_task, only: [:edit, :update]
   def new
     @goal = Goal.find(params[:goal_id])
     @task = Task.new
@@ -29,8 +29,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:goal_id])
     @task.destroy
-    redirect_to goal_path(@goal)
+    redirect_to goal_path(@task.goal_id), status: :see_other
   end
 
   private
