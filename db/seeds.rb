@@ -127,7 +127,7 @@ users.each do |user_input|
 
   puts "Creating goals..."
   user_input[:goals].each do |goal_input|
-    goal = Goal.create(name: goal_input[:name], description: goal_input[:description], category: "Sport",
+    goal = Goal.create(name: goal_input[:name], description: goal_input[:description], category: goal_input[:category],
                         status: "In Progress", user: user, start_date: Date.today,
                         end_date: Faker::Date.between(from: '2022-09-23', to: '2023-02-25'))
     puts "Created #{goal.name}"
