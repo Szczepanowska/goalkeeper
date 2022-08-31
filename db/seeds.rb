@@ -72,7 +72,7 @@ users = [
       {
         name: "Swap careers",
         description: "Become a web dev",
-        category: "Selfdevelopment",
+        category: "Selfdevelopement",
         task: [
           "Sign up to a bootcamp",
           "Study 1h everyday",
@@ -82,7 +82,7 @@ users = [
       {
         name: "Prepare Christmas gifts",
         description: "Start preparing family event",
-        category: "Lifestyle Goals",
+        category: "Lifestyle",
         task: [
           "Check Amazon",
           "Tell kids to write christmas list",
@@ -127,14 +127,14 @@ users.each do |user_input|
 
   puts "Creating goals..."
   user_input[:goals].each do |goal_input|
-    goal = Goal.create(name: goal_input[:name], description: goal_input[:description], category: goal_input[:category],
+    goal = Goal.create!(name: goal_input[:name], description: goal_input[:description], category: goal_input[:category],
                         status: "In Progress", user: user, start_date: Date.today,
                         end_date: Faker::Date.between(from: '2022-09-23', to: '2023-02-25'))
     puts "Created #{goal.name}"
 
     puts "Creating tasks..."
     goal_input[:task].each do |task_input|
-      Task.create(name: task_input, status: "In Progress", goal_id: goal.id)
+      Task.create!(name: task_input, status: "In Progress", goal_id: goal.id)
       puts "Created #{task.name}"
     end
   end
