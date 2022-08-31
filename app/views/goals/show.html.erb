@@ -9,13 +9,15 @@
         <% @goal.tasks.each do |task| %>
         <li>
           <p><%= task.name %></p>
-          <p><%= task.description %></p>
           <p><%= task.status %></p>
+          <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
         </li>
         <% end %>
     </ul>
   <br><br>
   <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
+  <br><br>
+  <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
   <br><br>
   <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
   <br><br>
