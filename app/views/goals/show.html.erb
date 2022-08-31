@@ -10,7 +10,9 @@
     <li class="tasks">
       <p><%= task.name %></p>
       <p><%= task.status %></p>
-      <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+      <% if policy(@goal).destroy? %>
+        <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+      <% end %>
     </li>
     <% end %>
   </ul>
@@ -22,11 +24,17 @@
   <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
 <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
+  <% if policy(@task).create? %>
+    <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
+  <% end %>
   <br><br>
-  <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
+  <% if policy(@goal).edit? %>
+    <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
+  <% end %>
   <br><br>
-  <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+  <% if policy(@goal).destroy? %>
+    <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+  <% end %>
   <br><br>
-  <%= link_to "back", goals_path(@goal), class: "btn btn-primary" %>
+  <%= link_to "back", :back, class: "btn btn-primary" %>
 </div>

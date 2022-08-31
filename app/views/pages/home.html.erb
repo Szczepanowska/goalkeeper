@@ -14,10 +14,11 @@
   <% end %>
 
   <h2>Get inspired with other users aims:</h2>
+
   <% @goals.each do |goal| %>
     <%= link_to goal_path(goal) do  %>
       <div class="card-product">
-        <img src="https://picsum.photos/250" />
+        <img src="<%= goal.category_url %>"/>
           <div class="card-product-infos">
             <h2> <%= goal.name %> </h2>
             <p><%= goal.description %></p>
