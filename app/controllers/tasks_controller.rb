@@ -1,15 +1,19 @@
 class TasksController < ApplicationController
   before_action :find_goal, only: [:update]
   before_action :find_task, only: [:edit, :update]
+
   def new
-    @goal = Goal.find(params[:goal_id])
     @task = Task.new
+    @goal = Goal.find(params[:goal_id])
+    @task.goal = @goal
+    authorize @task
   end
 
   def create
     @goal = Goal.find(params[:goal_id])
     @task = Task.new(task_params)
     @task.goal = @goal
+    authorize @task
     if @task.save
       redirect_to goal_path(@goal)
     else
@@ -17,19 +21,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @task.update(task_params)
-      redirect_to goal_path(@goal)
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @task = Task.find(params[:goal_id])
+    authorize @task
     @task.destroy
     redirect_to goal_path(@task.goal_id), status: :see_other
   end
