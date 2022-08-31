@@ -18,6 +18,7 @@ emails = ["carlos.baez.fumero@gmail.com", "x.briglmeier@gmail.com", "szczepanows
 users = [
   {
     email: "carlos.baez.fumero@gmail.com",
+    user_name: "carlosbaezfumero",
     goals: [
       {
         name: "Lose weight",
@@ -43,6 +44,7 @@ users = [
   },
   {
     email: "x.briglmeier@gmail.com",
+    user_name: "Xaver B",
     goals: [
       {
         name: "Drink More Water",
@@ -68,6 +70,7 @@ users = [
   },
   {
     email: "szczepanowska.n@gmail.com",
+    user_name: "Natalia SZCZCSZCZS",
     goals: [
       {
         name: "Swap careers",
@@ -93,6 +96,7 @@ users = [
   },
   {
     email: "luizrmiug@gmail.com",
+    user_name: "luiz",
     goals: [
       {
         name: "Save some money",
@@ -130,7 +134,7 @@ users = [
 # generate random users
 puts "Creating users..."
 users.each do |user_input|
-  user = User.create(email: user_input[:email], password: "123456", user_name: Faker::Name.first_name)
+  user = User.create(email: user_input[:email], password: "123456", user_name: user_input[:user_name])
   puts "Created #{user.user_name}"
 
   puts "Creating goals..."
@@ -141,7 +145,7 @@ users.each do |user_input|
     puts "Created #{goal.name}"
 
     puts "Creating tasks..."
-    goal_input[:tasks].each do |task_input|
+    goal_input[:task].each do |task_input|
       Task.create(name: task_input, status: "In Progress", goal_id: goal.id)
       puts "Created #{task.name}"
     end
