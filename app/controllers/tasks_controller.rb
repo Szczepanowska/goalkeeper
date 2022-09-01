@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_goal, only: [:update]
-  before_action :find_task, only: [:edit, :update]
+  before_action :find_task, only: [:edit, :update, :completed]
 
   def new
     @task = Task.new
@@ -8,6 +8,12 @@ class TasksController < ApplicationController
     @task.goal = @goal
     authorize @task
   end
+
+  # def complete
+  #   @task.completed = true
+  #   @task.save
+  #   redirect_to tasks_path
+  # end
 
   def create
     @goal = Goal.find(params[:goal_id])
