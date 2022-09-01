@@ -3,7 +3,7 @@
 <div class="goalscontainer">
 <%# Searchbar via Lewagon UI kit %>
   <%#= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+  <%= form_with url: root_path, method: :get, class: "d-flex mb-4" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
