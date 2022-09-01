@@ -1,7 +1,6 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="container">
   <div class="usercontainer">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
     <h1><%= current_user.email %></h1>
     <% if policy(Goal).new? %>
       <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary" %>

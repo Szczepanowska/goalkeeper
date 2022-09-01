@@ -16,26 +16,7 @@
   <h2>Get inspired with other users aims:</h2>
   <% @goals.each do |goal| %>
     <%= link_to goal_path(goal) do  %>
-      <div class="card-product">
-        <img src="<%= goal.category_url %>"/>
-          <div class="card-product-infos">
-            <h2> <%= goal.name %> </h2>
-            <p><%= goal.description %></p>
-            <p><%= goal.likes.count %> <%= (goal.likes.count) == 1 ? 'Clover' : 'Clovers'%></p>
-              <div class="progress">
-              <%  avg = goal.tasks.where(completed: true).count.fdiv(goal.tasks.count)  %>
-                <div class="progress-bar" role="progressbar" style="width: <%= (avg * 100).round %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (avg * 100).round %>%</div>
-              </div>
-            <div class="tasks">
-              <ul>
-                <% goal.tasks.each do |task| %>
-                  <li> <%= task.name %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-      </div>
+      <%= render "goals/goal_card", goal: goal %>
     <% end %>
   <% end %>
-      </div>
 </div>
