@@ -9,7 +9,7 @@
   </div>
 
   <%# iterating over goals and the tasks connected to this particular goal %>
-  <div class="goalscontainer ">
+  <div class="goalscontainer">
     <h2>Goals</h2>
       <% @goals.each do |goal| %>
       <%= link_to goal_path(goal) do  %>
