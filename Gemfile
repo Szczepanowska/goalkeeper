@@ -33,12 +33,14 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# cloudinary for cloud images avatars 
+# cloudinary for cloud images avatars
 gem "cloudinary"
 
 # pundit for authorization [https://github.com/varvet/pundit]
 gem "pundit"
 
+# share button for social media
+gem 'social-share-button'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
