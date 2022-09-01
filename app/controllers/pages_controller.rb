@@ -7,5 +7,6 @@ class PagesController < ApplicationController
     else
       @goals = Goal.all
     end
+    @goals.order(updated_at: :desc)
   end
 end

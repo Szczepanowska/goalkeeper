@@ -6,7 +6,7 @@
   <%= @goal.start_date %>
   <%= @goal.end_date %>
   <ul class="tasksgrid">
-    <% @goal.tasks.each do |task| %>
+    <% @goal.tasks.sort.each do |task| %>
     <li class="tasks">
       <% if  task.completed == false %>
         <% if policy(task).completed? %>
@@ -26,11 +26,11 @@
     <% end %>
   </ul>
   <br><br>
-<%# if already_liked? %>
-  <%#= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
-<%# else %>
-    <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
-<%# end %>
+    <% if current_user && @like %>
+        <%= button_to 'Unlike', goal_like_path(@goal, @like), method: :delete %>
+    <% else %>
+        <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
+    <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% if policy(@task).create? %>
     <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>

@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :likes, dependent: :destroy
   has_one_attached :photo
+
+  def already_liked_goal?(goal)
+    Like.where(user: self, goal: goal).exists?
+  end
 end

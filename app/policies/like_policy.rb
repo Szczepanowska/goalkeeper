@@ -13,5 +13,4 @@ class LikePolicy < ApplicationPolicy
   def destroy?
     true
   end
-
 end
