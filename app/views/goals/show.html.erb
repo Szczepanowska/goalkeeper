@@ -22,6 +22,7 @@
 <%# else %>
     <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
 <%# end %>
+<%= social_share_button_tag(@goal.name, :allow_sites => %w(twitter facebook)) %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% if policy(@task).create? %>
     <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
