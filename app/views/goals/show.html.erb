@@ -17,8 +17,7 @@
     <% end %>
   </ul>
   <br><br>
-<%= social_share_button_tag(@goal.name, :allow_sites => %w(twitter facebook)) %>
-  <% pre_like = @goal.likes.find { |like| like.user_id == current_user.id} %>
+<% pre_like = @goal.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
   <%= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
 <% else %>
