@@ -16,6 +16,7 @@ users = [
   {
     email: "carlos.baez.fumero@gmail.com",
     user_name: "carlosbaezfumero",
+    photo: "carlos.png",
     goals: [
       {
         name: "Lose weight",

@@ -7,8 +7,4 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :likes, dependent: :destroy
   has_one_attached :photo
-
-  def check_avatar(current_user)
-
-  end
 end
