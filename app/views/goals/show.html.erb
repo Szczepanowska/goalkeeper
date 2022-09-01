@@ -1,39 +1,41 @@
-<div class="container">
-  <h1><%= @goal.name %></h1>
-  <h2><%= @goal.description %></h2>
-  <p>Category: <%= @goal.category %></p>
-  <p>Progress: <%= @goal.status %></p>
-  <%= @goal.start_date %>
-  <%= @goal.end_date %>
+<div class="container60">
+  <div class="showgoalscontainer">
+    <div class="m-5">
+      <h1><%= @goal.name %></h1>
+      <h2><%= @goal.description %></h2>
+    </div>
+    <img src="<%= @goal.category_url %>"/>
+  </div>
+  <%# <p>Started the project at <%= @goal.start_date %>
+  <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
+
   <ul class="tasksgrid">
     <% @goal.tasks.each do |task| %>
     <li class="tasks">
       <p><%= task.name %></p>
-      <p><%= task.status %></p>
       <% if policy(@goal).destroy? %>
+        <%= link_to "Complete!", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-success mr-3" %>
         <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
       <% end %>
     </li>
     <% end %>
   </ul>
-  <br><br>
 <%# if already_liked? %>
   <%#= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
 <%# else %>
-    <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
+  <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
 <%# end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  <% if policy(@task).create? %>
-    <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
-  <% end %>
-  <br><br>
-  <% if policy(@goal).edit? %>
-    <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
-  <% end %>
-  <br><br>
-  <% if policy(@goal).destroy? %>
-    <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
-  <% end %>
-  <br><br>
-  <%= link_to "back", :back, class: "btn btn-primary" %>
+  <div class="d-flex justify-content-between">
+    <% if policy(@task).create? %>
+      <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
+    <% end %>
+    <% if policy(@goal).edit? %>
+      <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
+    <% end %>
+    <% if policy(@goal).destroy? %>
+      <%= link_to "Delete Goal", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+    <% end %>
+    <%= link_to "back", :back, class: "btn btn-primary" %>
+  </div>
 </div>
