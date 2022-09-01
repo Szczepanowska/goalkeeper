@@ -16,6 +16,7 @@ users = [
   {
     email: "carlos.baez.fumero@gmail.com",
     user_name: "carlosbaezfumero",
+    image: "carlos.png",
     goals: [
       {
         name: "Lose weight",
@@ -42,6 +43,7 @@ users = [
   {
     email: "x.briglmeier@gmail.com",
     user_name: "Xaver B",
+    image: "xaver.jpg",
     goals: [
       {
         name: "Drink More Water",
@@ -68,6 +70,7 @@ users = [
   {
     email: "szczepanowska.n@gmail.com",
     user_name: "Natalia SZCZCSZCZS",
+    image: "natalia.jpg",
     goals: [
       {
         name: "Swap careers",
@@ -94,6 +97,7 @@ users = [
   {
     email: "luizrmiug@gmail.com",
     user_name: "luiz",
+    image: "luiz.jpg",
     goals: [
       {
         name: "Save some money",
@@ -122,7 +126,10 @@ users = [
 # generate users with tasks and goals
 puts "Creating users..."
 users.each do |user_input|
-  user = User.create(email: user_input[:email], password: "123456", user_name: user_input[:user_name])
+  file = File.open("app/assets/images/#{user_input[:image]}")
+  user = User.new(email: user_input[:email], password: "123456", user_name: user_input[:user_name])
+  user.photo.attach(io: file, filename: user_input[:image], content_type: "image/png")
+  user.save
   puts "Created #{user.user_name}"
 
   puts "Creating goals..."
