@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :tasks
     resources :likes
   end
+  patch 'tasks/:id/completed', to: 'tasks#completed', as: 'completed'
+  patch 'tasks/:id/incomplete', to: 'tasks#incomplete', as: 'incomplete'
 end
   # Defines the root path route ("/")
   # root "articles#index"

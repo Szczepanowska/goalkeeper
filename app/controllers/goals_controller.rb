@@ -11,6 +11,7 @@ class GoalsController < ApplicationController
   def show
     authorize @goal
     @task = Task.new(goal: @goal)
+    @like = Like.find_by(user: current_user, goal: @goal)
   end
 
   def new

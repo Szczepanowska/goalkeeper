@@ -1,12 +1,16 @@
 class LikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :create ]
   before_action :find_goal
+
   def create
     @like = Like.where(goal_id: params[:goal_id])
     authorize @like
-    if already_liked?
+    if current_user&.already_liked_goal?(@goal)
       flash[:notice] = "You can't like more than once"
+    elsif current_user
+      @goal.likes.create(user: current_user)
     else
-      @goal.likes.create(user_id: current_user.id)
+      @goal.likes.create
     end
     redirect_to goal_path(@goal)
   end
@@ -14,7 +18,7 @@ class LikesController < ApplicationController
   def destroy
     @like = @goal.likes.find(params[:id])
     authorize @like
-    if already_liked?
+    if current_user&.already_liked_goal?(@goal)
       @like.destroy
     else
       flash[:notice] = "Cannot unlike"
@@ -23,11 +27,6 @@ class LikesController < ApplicationController
   end
 
   private
-
-  def already_liked?
-    Like.where(user_id: current_user.id, goal_id:
-    params[:goal_id]).exists?
-  end
 
   def find_goal
     @goal = Goal.find(params[:goal_id])

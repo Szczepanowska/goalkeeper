@@ -8,6 +8,15 @@ class ApplicationPolicy
     @record = record
   end
 
+  def completed?
+    false
+  end
+
+  def incomplete?
+    false
+  end
+
+
   def index?
     false
   end
