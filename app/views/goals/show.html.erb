@@ -36,6 +36,6 @@
     <% if policy(@goal).destroy? %>
       <%= link_to "Delete Goal", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
     <% end %>
-    <%= link_to "back", :back, class: "btn btn-primary" %>
+    <%= link_to "back", :back, class: "btn btn-secondary" %>
   </div>
 </div>
