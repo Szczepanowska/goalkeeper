@@ -10,7 +10,7 @@
   <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
 
   <ul class="tasksgrid">
-    <% @goal.tasks.each do |task| %>
+    <% @goal.tasks.sort.each do |task| %>
     <li class="tasks">
       <% if  task.completed == false %>
         <% if policy(task).completed? %>
@@ -29,11 +29,12 @@
     </li>
     <% end %>
   </ul>
-<%# if already_liked? %>
-  <%#= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
-<%# else %>
-  <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
-<%# end %>
+  <br><br>
+    <% if current_user && @like %>
+        <%= button_to 'Unlike', goal_like_path(@goal, @like), method: :delete %>
+    <% else %>
+        <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
+    <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <div class="d-flex justify-content-between">
     <% if policy(@task).create? %>

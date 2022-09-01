@@ -7,11 +7,11 @@ class TaskPolicy < ApplicationPolicy
   end
 
   def completed?
-    true
+    record.goal.user == user
   end
 
   def incomplete?
-    true
+    record.goal.user == user
   end
 
   def create?
