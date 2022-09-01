@@ -10,7 +10,7 @@ module ApplicationHelper
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
-        { href: image_url('goals.jpeg'), rel: 'touch-icon', sizes: '180x180', type: 'image/jpeg' },
+        { href: image_url('goals.jpg'), rel: 'touch-icon', sizes: '180x180', type: 'image/jpeg' },
       ],
       og: {
         site_name: 'Goalkeeper',
@@ -18,7 +18,7 @@ module ApplicationHelper
         description: 'The tool to help you better manage your goals!',
         type: 'website',
         url: request.original_url,
-        image: image_url('goals.jpeg')
+        image: image_url('goals.jpg')
       }
     }
   end
