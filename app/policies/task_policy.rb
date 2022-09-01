@@ -6,6 +6,14 @@ class TaskPolicy < ApplicationPolicy
     end
   end
 
+  def completed?
+    true
+  end
+
+  def incomplete?
+    true
+  end
+
   def create?
     record.goal.user == user
   end

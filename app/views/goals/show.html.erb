@@ -8,6 +8,15 @@
   <ul class="tasksgrid">
     <% @goal.tasks.each do |task| %>
     <li class="tasks">
+      <% if  task.completed == false %>
+        <% if policy(task).completed? %>
+          <%= link_to "Complete", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %> <%# , data: {turbo_method: :patch}  %>
+        <% end %>
+      <% else %>
+        <% if policy(task).incomplete? %>
+          <%= link_to "Not done", incomplete_path(task), data: {turbo_method: :patch}, :class => "btn btn-danger mr-3" %> <%# , data: {turbo_method: :patch}  %>
+        <% end %>
+      <% end %>
       <p><%= task.name %></p>
       <p><%= task.status %></p>
       <% if policy(@goal).destroy? %>
