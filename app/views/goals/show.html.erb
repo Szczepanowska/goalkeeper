@@ -30,6 +30,10 @@
     <% end %>
   </ul>
   <br><br>
+
+  <div class="clover">
+  <%= image_tag("clover.png")%>
+  </div>
     <% if current_user && @like %>
         <%= button_to 'Unlike', goal_like_path(@goal, @like), method: :delete %>
     <% else %>
