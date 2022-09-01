@@ -17,10 +17,13 @@
     <% end %>
   </ul>
   <br><br>
+  <div class="clover">
+  <%= image_tag("clover.png")%>
+  </div>
 <%# if already_liked? %>
   <%#= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
 <%# else %>
-    <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
+  <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
 <%# end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% if policy(@task).create? %>
