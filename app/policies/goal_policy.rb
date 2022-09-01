@@ -5,6 +5,7 @@ class GoalPolicy < ApplicationPolicy
       user.admin? ? scope.all : scope.where(user: user)
     end
   end
+
   def show?
     true
   end
