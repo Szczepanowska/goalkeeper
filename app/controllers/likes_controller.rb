@@ -1,6 +1,8 @@
 class LikesController < ApplicationController
   before_action :find_goal
   def create
+    @like = Like.where(goal_id: params[:goal_id])
+    authorize @like
     if already_liked?
       flash[:notice] = "You can't like more than once"
     else
@@ -11,6 +13,7 @@ class LikesController < ApplicationController
 
   def destroy
     @like = @goal.likes.find(params[:id])
+    authorize @like
     if already_liked?
       @like.destroy
     else

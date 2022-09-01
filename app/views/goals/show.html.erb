@@ -17,12 +17,11 @@
     <% end %>
   </ul>
   <br><br>
-<% pre_like = @goal.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
-<% else %>
-  <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
-<% end %>
+<%# if already_liked? %>
+  <%#= button_to 'Unlike', goal_like_path(@goal, pre_like), method: :delete %>
+<%# else %>
+    <%= button_to 'Like', goal_likes_path(@goal), method: :post %>
+<%# end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% if policy(@task).create? %>
     <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>

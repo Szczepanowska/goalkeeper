@@ -9,7 +9,6 @@ class GoalsController < ApplicationController
   end
 
   def show
-
     authorize @goal
     @task = Task.new(goal: @goal)
   end
