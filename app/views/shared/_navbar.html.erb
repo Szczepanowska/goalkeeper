@@ -1,8 +1,8 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="container-fluid goalscontainer">
     <%= link_to "/", class: "navbar-brand" do %>
-      <i class="fa-solid fa-bullseye fa-2xl"></i>
+      <i class="fa-solid fa-bullseye fa-2xl navbar-center"></i>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +10,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto navbar-center">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link nav-text" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Goals", goals_path, class: "nav-link" %>
+            <%= link_to "Goals", goals_path, class: "nav-link nav-text" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.key.present? == true %>
