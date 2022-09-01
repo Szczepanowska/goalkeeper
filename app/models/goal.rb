@@ -17,4 +17,12 @@ class Goal < ApplicationRecord
   def category_url
     Goal::CATEGORIES.find { |c| self.category == c[:name] }[:url]
   end
+
+  def completed_tasks
+    self.tasks.completed
+  end
+
+  def progress
+    self.completed_tasks.count.fdiv(self.tasks.count)
+  end
 end
