@@ -5,24 +5,27 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  border-radius: 16px;
 }
 
 .card-product img {
   height: 100%;
-  width: 200px;
+  width: 100px;
   object-fit: cover;
   margin: 16px;
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
+  color: #17DA9D;
 }
 
 .card-product p {
-  font-size: 12px;
+  color: #090642;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -31,7 +34,27 @@
 
 .card-product .card-product-infos {
   padding: 16px;
-  width: 50%;
+  width: 25%;
+}
+
+.datedue {
+  width: 20%;
+  color: #479795;
+  margin-left: 50px;
+  margin-right: 10px;
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.progress {
+  flex-grow: 1;
+}
+
+.percentage {
+  margin-left: 10px;
+  color: #17DA9D;
+  font-size: 16px;
 }
 
 .greeting {
