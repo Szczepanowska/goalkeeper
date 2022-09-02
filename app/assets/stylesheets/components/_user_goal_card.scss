@@ -1,0 +1,29 @@
+.user-goal-card {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 2px #e0e0e0;
+
+  img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+}
+
+.user-goal-card-top {
+  display: flex;
+}
+
+.user-goal-card-dots {
+  margin-left: auto;
+}
+
+.user-goal-card-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
