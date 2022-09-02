@@ -1,61 +1,21 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="container">
-  <div class="usercontainer">
+  <div class="goalscontainer">
     <h1><% current_user.email %></h1>
       <div class="greeting"><h1>Hello, <%= current_user.user_name.capitalize %></h1>
       </div>
+      <br><br><br>
     <% if policy(Goal).new? %>
       <%= link_to "Create Goal", new_goal_path, class: "btn btn-green" %>
     <% end %>
   </div>
-
-  <div>
-    <h2>Your goals!</h2>
-    <div class="d-flex">
-
-      <%= link_to "#", class: "user-goal-card-link" do %>
-        <div class="user-goal-card p-4">
-          <div class="user-goal-card-top">
-            <%= image_tag "https://cdn-icons-png.flaticon.com/512/8317/8317218.png" %>
-            <div class="d-flex flex-column">
-              <span>Goal</span>
-              <span>name of the goal</span>
-            </div>
-            <div class="user-goal-card-dots">dots</div>
-          </div>
-          <div>progress</div>
-          <div class="user-goal-card-last-task d-flex">
-            Last task
-          </div>
-          <div class="user-goal-card-next-task d-flex">
-            Next task
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
+  <br><br><br>
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
     <h2>Goals</h2>
       <% @goals.each do |goal| %>
       <%= link_to goal_path(goal) do  %>
-        <div class="card-product">
-          <img src="<%= goal.category_url %>"/>
-          <div class="card-product-infos">
-            <h2> <%= goal.name %> </h2>
-            <p><%= goal.description %></p>
-            <p><%= goal.likes.count %> <%= (goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-            <p></p>
-            <div class="tasks">
-              <ul>
-                <% goal.tasks.each do |task| %>
-                  <li> <%= task.name %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <%= render "goals/goal_card", goal: goal %>
       <% end %>
     <% end %>
   </div>
