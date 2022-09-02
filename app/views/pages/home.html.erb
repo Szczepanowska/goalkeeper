@@ -14,7 +14,7 @@
 </div>
 
 <div class="goalscontainer">
-  <h2>Get inspired with other users goals:</h2>
+  <h1>Get inspired with other users goals:</h1>
   <% @goals.each do |goal| %>
     <%= link_to goal_path(goal) do  %>
       <%= render "goals/goal_card", goal: goal %>
