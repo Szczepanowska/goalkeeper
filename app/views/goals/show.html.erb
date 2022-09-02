@@ -28,9 +28,9 @@
     <% end %>
   </ul>
     <% if current_user && @like %>
-        <%= button_to image_tag("dark_clover 2 1.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
+        <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
     <% else %>
-        <%= button_to image_tag("clover.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
+        <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
     <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%></p>
   <div class="d-flex justify-content-between">
