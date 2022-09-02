@@ -73,18 +73,18 @@ users = [
     image: "natalia.jpg",
     goals: [
       {
-        name: "Swap careers",
-        description: "Become a web dev",
-        category: "Selfdevelopement",
+        name: "Becoming Web Developer",
+        description: "Bored with a customer service, looking for adventures 🚀",
+        category: "Career",
         task: [
-          "Sign up to a bootcamp",
-          "Study 1h everyday",
+          "Start with online free courses",
+          "Sign up to Le Wagon",
           "Do flashcards"
         ]
       },
       {
         name: "Prepare Christmas gifts",
-        description: "Start preparing family event",
+        description: "Trying to avoid december shoping rush",
         category: "Lifestyle",
         task: [
           "Check Amazon",
@@ -101,7 +101,7 @@ users = [
     goals: [
       {
         name: "Save some money",
-        description: "2023 Holidays",
+        description: "Need to save for 2023 Holidays",
         category: "Finances",
         task: [
           "Put 1 euro in a jar everytime I insult Carlos",

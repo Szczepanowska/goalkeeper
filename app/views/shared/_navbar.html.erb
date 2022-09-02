@@ -1,7 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid goalscontainer">
     <%= link_to "/", class: "navbar-brand" do %>
-      <i class="fa-solid fa-bullseye fa-2xl navbar-center"></i>
+          <%# <i class="fa-solid fa-bullseye fa-2xl navbar-center"></i> %>
+          <div class="d-flex h-100">
+            <%= image_tag("logo.png") %>
+            <div class="ms-1">
+              <p class="font-title" style="font-size: 26px; line-height: 4px;">Goal</p>
+              <p class="font-title" style="font-size: 26px; line-height: 4px;">Keeper</p>
+            </div>
+          </div>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
