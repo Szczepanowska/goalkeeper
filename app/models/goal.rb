@@ -23,6 +23,10 @@ class Goal < ApplicationRecord
   end
 
   def progress
-    self.completed_tasks.count.fdiv(self.tasks.count)
+    if self.tasks.empty?
+      0
+    else
+      self.completed_tasks.count.fdiv(self.tasks.count)
+    end
   end
 end
