@@ -8,6 +8,9 @@
   </div>
   <%# <p>Started the project at <%= @goal.start_date %>
   <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
+        <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= (@goal.progress * 100).round %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
+    </div>
   <ul class="tasksgrid">
     <% @goal.tasks.sort.each do |task| %>
     <li class="tasks">
@@ -17,7 +20,7 @@
         <% end %>
       <% else %>
         <% if policy(task).incomplete? %>
-          <%= link_to "Not done", incomplete_path(task), data: {turbo_method: :patch}, :class => "btn btn-danger mr-3" %> <%# , data: {turbo_method: :patch}  %>
+          <%= link_to "Nots done", incomplete_path(task), data: {turbo_method: :patch}, :class => "btn btn-danger mr-3" %> <%# , data: {turbo_method: :patch}  %>
         <% end %>
       <% end %>
       <p><%= task.name %></p>
