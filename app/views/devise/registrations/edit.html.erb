@@ -23,10 +23,17 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
+      <div class="d-flex justify-content-center">
+        <% if current_user.photo.key.present? == true %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, class: "super-large-avatar" %>
+        <% else %>
+          <%= image_tag("default_user_image.png", crop: :fill, class: "super-large-avatar") %>
+        <% end %>
+      </div>
       <%= f.input :photo, as: :file %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions mb-5">
       <%= f.button :submit, "Update" %>
     </div>
   <% end %>
