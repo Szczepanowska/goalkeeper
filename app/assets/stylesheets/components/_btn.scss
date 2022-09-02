@@ -3,24 +3,25 @@
   width: 227px;
   height: 60px;
   left: 904px;
+  border-radius: 20px;
   top: 209px;
-  background-color: green;
-}
-
-.btn-green p {
-  position: absolute;
-  left: 53.93%;
-  right: 36.13%;
-  top: 20.23%;
-  bottom: 77.34%;
+  background-color: #17DA9D;
+  padding: 15px 0;
+  color: white;
   font-family: 'Raleway';
-  font-style: normal;
   font-weight: 800;
   font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-self: start;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+// .btn-green p {
+
+//   font-style: normal;
+
+//   line-height: 21px;
+//   display: flex;
+//   align-self: start;
+//   align-items: center;
+//   text-align: center;
+//   color: #FFFFFF;
+// }
