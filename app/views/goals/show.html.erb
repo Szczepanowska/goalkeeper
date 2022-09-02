@@ -45,4 +45,8 @@
     <% end %>
     <%= link_to "back", :back, class: "btn btn-secondary" %>
   </div>
+      <div class="share">
+      <i class="fa-brands fa-square-whatsapp"></i>
+      <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", data: { action: "share/whatsapp/share"}%>
+      </div>
 </div>
