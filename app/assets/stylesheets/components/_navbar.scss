@@ -23,5 +23,19 @@
 }
 
 .nav-text{
-  color: black !important;
+  color: $tag !important;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+}
+
+.nav-name {
+  color: $header !important;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
 }
