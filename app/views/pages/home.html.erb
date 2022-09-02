@@ -1,19 +1,20 @@
 
   <%# iterating over goals and the tasks connected to this particular goal %>
-<div class="goalscontainer">
 <%# Searchbar via Lewagon UI kit %>
   <%#= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <%= form_with url: root_path, method: :get, class: "d-flex mb-4" do %>
+<div class="searchbar">
+  <%= form_with url: root_path, method: :get, class: "input" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Search for a goal"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-
+  <%= submit_tag "Search", class: "btn btn-outline-success" %>
   <% end %>
+</div>
 
-  <h2>Get inspired with other users aims:</h2>
+<div class="goalscontainer">
+  <h2>Get inspired with other users goals:</h2>
   <% @goals.each do |goal| %>
     <%= link_to goal_path(goal) do  %>
       <%= render "goals/goal_card", goal: goal %>
