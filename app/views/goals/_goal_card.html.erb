@@ -19,4 +19,6 @@
       <h3>Date due:</h3>
       <%= goal.tasks.count %> Tasks until <%= goal.end_date %>
     </div>
+    <% link_to bookmarks_path(goal,user) %>
+    <i class="fa-solid fa-bookmark fa-xl bookmark-position"></i>
 </div>
