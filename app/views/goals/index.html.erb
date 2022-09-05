@@ -10,15 +10,11 @@
     <% end %>
   </div>
   <br><br><br>
+
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
     <h2>Goals</h2>
-      <% @goals.each do |goal| %>
-      <%= link_to goal_path(goal) do  %>
-        <%= render "goals/goal_card", goal: goal %>
-      <% end %>
-    <% end %>
+    <%= render "goals/goal_card", goal: @goals %>
   </div>
-</div>
 
-<%# .first(3) You can put this to the iterators to only display maybe 3 tasks %>
+</div>
