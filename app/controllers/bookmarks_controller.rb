@@ -17,8 +17,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+    @goal = Goal.find(params[:goal_id])
+    @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmark.destroy
-    redirect_to home_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 end
