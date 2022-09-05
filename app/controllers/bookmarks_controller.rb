@@ -5,11 +5,12 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(goal_params)
+    @goal = Goal.find(params[:goal_id])
+    @bookmark = Bookmark.new(goal: @goal)
     authorize @bookmark
     @bookmark.user = current_user
     if @bookmark.save
-      redirect_to home_path
+      redirect_to root_path
     else
       render :new
     end
