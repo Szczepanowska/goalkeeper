@@ -10,6 +10,7 @@
     <% end %>
   </div>
   <br><br><br>
+
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
     <h2>Goals</h2>
@@ -25,7 +26,6 @@
     <% @user_completed_goals.each do |g| %>
       <img src="<%= g.category_url_badge %>" width="88"/>
     <% end %>
-  </div>
 </div>
 
-<%# .first(3) You can put this to the iterators to only display maybe 3 tasks %>
+

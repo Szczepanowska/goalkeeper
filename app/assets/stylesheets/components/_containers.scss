@@ -26,12 +26,17 @@
 
 .half-page-container {
   width: 50%;
-  // justify-content: center;
-  // margin: 0 auto;
+  margin-right: 16px;
+}
+
+.recent-tasks-container {
+  display: block;
+  width: 70%;
+  justify-content: space-between;
+  margin: 0 auto;
 
   a {
     color: black;
     text-decoration: none !important;
-    }
   }
-
+}
