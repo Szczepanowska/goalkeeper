@@ -13,32 +13,37 @@
   <% end %>
 </div>
 
-<div class="goalscontainer">
-  <h2>Your recent tasks</h2>
+<div class="d-flex">
   <div class="half-page-container">
-    <% task_list = [] %>
-    <% if current_user.present? %>
-      <% current_user.goals.each do |goal| %>
-        <% task_list += goal.tasks %>
+    <h2>Your recent tasks</h2>
+      <% task_list = [] %>
+      <% if current_user.present? %>
+        <% current_user.goals.each do |goal| %>
+          <% task_list += goal.tasks %>
+        <% end %>
+        <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
+          <div class="">
+            <ul>
+              <li><%= task[:name] %></li>
+              <li><%= task[:created_at] %></li>
+            </ul>
+          </div>
+        <% end %>
+        <%# <%= task_list.sort_by { |date| date.created_at } %>
       <% end %>
-      <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
-        <div class="">
-          <ul>
-            <li><%= task[:name] %></li>
-            <li><%= task[:created_at] %></li>
-          </ul>
-        </div>
+    </div>
+
+  <div class="">
+    <h2>Your bookmarks</h2>
+    <% if current_user.bookmarks.present? %>
+      <% current_user.bookmarks.each do |bookmark| %>
+        <%= bookmark.goal.name %>
       <% end %>
-      <%# <%= task_list.sort_by { |date| date.created_at } %>
     <% end %>
   </div>
 </div>
 
 <div class="goalscontainer">
   <h1>Get inspired with other users goals:</h1>
-  <% @goals.each do |goal| %>
-    <%= link_to goal_path(goal) do  %>
-      <%= render "goals/goal_card", goal: goal %>
-    <% end %>
-  <% end %>
+  <%= render "goals/goal_card", goal: @goals %>
 </div>
