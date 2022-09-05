@@ -8,6 +8,10 @@
 $body-font: 'Raleway', sans-serif;
 $headers-font: 'Raleway', sans-serif;
 
+*:not(i){
+  font-family: 'Raleway';
+}
+
 .default-header {
   font-family: 'Raleway';
   font-style: normal;
