@@ -4,8 +4,11 @@ class GoalsController < ApplicationController
 
   def index
     @goals = policy_scope(Goal)
-    @goals = current_user.goals
+    complete_goals(@goals)
+    @user_goals = current_user.goals
     @tasks = Task.find_by(goal_id: @goals)
+
+    @user_completed_goals = @goals.where(status: "completed")
   end
 
   def show
@@ -50,6 +53,12 @@ class GoalsController < ApplicationController
   end
 
   private
+
+  def complete_goals(goals)
+    goals.each do |goal|
+      goal.update(status: "completed") if goal.progress == 1.0
+    end
+  end
 
   def set_goal
     @goal = Goal.find(params[:id])
