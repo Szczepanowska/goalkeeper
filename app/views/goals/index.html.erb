@@ -1,20 +1,20 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="container">
   <div class="goalscontainer">
-    <h1><% current_user.email %></h1>
-      <div class="greeting"><h1>Hello, <%= current_user.user_name.capitalize %></h1>
-      </div>
-      <br><br><br>
-    <% if policy(Goal).new? %>
-      <%= link_to "Create Goal", new_goal_path, class: "btn btn-green" %>
-    <% end %>
+    <h1 class="header-subtitle"><% current_user.email %></h1>
+    <h1 class="header-subtitle">Hello, <%= current_user.user_name.capitalize %></h1>
   </div>
-  <br><br><br>
 
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
     <h2>Goals</h2>
     <%= render "goals/goal_card", goal: @goals %>
+  </div>
+
+  <div class="container70">
+    <% if policy(Goal).new? %>
+      <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary-green" %>
+    <% end %>
   </div>
 
 </div>

@@ -24,14 +24,17 @@
           </div>
       </div>
     <% end %>
-    <% if Bookmark.find_by(goal_id: goal.id)  %>
-      <% @bookmark = Bookmark.find_by(goal_id: goal.id) %>
-      <%= link_to goal_bookmark_path(goal, @bookmark), data: {turbo_method: :delete} do  %>
-        <i class="fa-solid fa-bookmark fa-xl bookmark-position"></i>
-      <% end %>
-    <% else %>
-      <%= link_to goal_bookmarks_path(goal), data: {turbo_method: :post} do  %>
-        <i class="fa-regular fa-bookmark fa-xl bookmark-position"></i>
+
+    <% if current_user.id != goal.user_id %>
+      <% if Bookmark.find_by(goal_id: goal.id)  %>
+        <% @bookmark = Bookmark.find_by(goal_id: goal.id) %>
+        <%= link_to goal_bookmark_path(goal, @bookmark), data: {turbo_method: :delete} do  %>
+          <i class="fa-solid fa-bookmark fa-xl bookmark-position"></i>
+        <% end %>
+      <% else %>
+        <%= link_to goal_bookmarks_path(goal), data: {turbo_method: :post} do  %>
+          <i class="fa-regular fa-bookmark fa-xl bookmark-position"></i>
+        <% end %>
       <% end %>
     <% end %>
   </div>
