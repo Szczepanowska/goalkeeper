@@ -15,7 +15,7 @@
 
 <div class="recent-tasks-container d-flex">
   <div class="half-page-container">
-    <h2>Your recent tasks</h2>
+    <h2 class="header-subtitle">Your recent tasks</h2>
     <div class="card50">
       <% task_list = [] %>
       <% if current_user.present? %>
@@ -25,8 +25,8 @@
         <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
           <div class="">
             <ul>
-              <li><%= task[:name] %></li>
-              <li><%= task[:created_at] %></li>
+              <li class="font-small-header"><%= task[:name] %></li>
+              <%# <li><%= task[:created_at] %>
             </ul>
           </div>
         <% end %>
@@ -35,11 +35,13 @@
   </div>
 
   <div class="half-page-container">
-  <h2>Your bookmarks</h2>
+  <h2 class="header-subtitle">Your bookmarks</h2>
   <div class="card50">
     <% if current_user.bookmarks.present? %>
       <% current_user.bookmarks.each do |bookmark| %>
-        <%= bookmark.goal.name %>
+        <ul>
+          <li class="font-small-header" style="color: black;"><%= bookmark.goal.name %></li>
+        </ul>
       <% end %>
     <% end %>
   </div>
@@ -56,6 +58,6 @@
 </div>
 
 <div class="goalscontainer">
-  <h2>Get inspired with other users goals:</h2>
+  <h2 class="header-subtitle">Get inspired with other users goals:</h2>
   <%= render "goals/goal_card", goal: @goals %>
 </div>
