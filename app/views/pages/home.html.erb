@@ -16,8 +16,8 @@
 <div class="iconcontainer">
 <% Goal::CATEGORIES.each do |c| %>
   <%= simple_form_for :name, url: root_path, method: :get do |f| %>
-  <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
-<%= image_submit_tag c[:url] %>
+    <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
+      <%= image_submit_tag c[:url] %>
   <% end %>
 <% end %>
 </div>
@@ -50,8 +50,9 @@
       <% end %>
     <% end %>
   </div>
-
-<div class="goalscontainer">
-  <h1>Get inspired with other users goals:</h1>
-  <%= render "goals/goal_card", goal: @goals %>
 </div>
+
+  <div class="goalscontainer">
+    <h1>Get inspired with other users goals:</h1>
+    <%= render "goals/goal_card", goal: @goals %>
+  </div>
