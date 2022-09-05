@@ -13,7 +13,6 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .default-header {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -22,7 +21,6 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .header-subtitle {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -31,7 +29,6 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .font-link {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -40,7 +37,6 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .font-small-header {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -49,7 +45,6 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .font-paragraph {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -58,15 +53,12 @@ $headers-font: 'Raleway', sans-serif;
 }
 
 .font-details {
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   color: $paragraph;
 }
-
-
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
