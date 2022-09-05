@@ -13,6 +13,15 @@
   <% end %>
 </div>
 
+<div class="iconcontainer">
+<% Goal::CATEGORIES.each do |c| %>
+  <%= simple_form_for :name, url: root_path, method: :get do |f| %>
+  <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
+<%= image_submit_tag c[:url] %>
+  <% end %>
+<% end %>
+</div>
+
 <div class="d-flex">
   <div class="half-page-container">
     <h2>Your recent tasks</h2>
@@ -41,7 +50,6 @@
       <% end %>
     <% end %>
   </div>
-</div>
 
 <div class="goalscontainer">
   <h1>Get inspired with other users goals:</h1>
