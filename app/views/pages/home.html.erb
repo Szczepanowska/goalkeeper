@@ -15,13 +15,22 @@
 
 <div class="goalscontainer">
   <h2>Your recent tasks</h2>
-  <div class="card-product">
+  <div class="half-page-container">
     <% task_list = [] %>
-    <% current_user.goals.each do |goal| %>
-      <% task_list += goal.tasks %>
+    <% if current_user.present? %>
+      <% current_user.goals.each do |goal| %>
+        <% task_list += goal.tasks %>
+      <% end %>
+      <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
+        <div class="">
+          <ul>
+            <li><%= task[:name] %></li>
+            <li><%= task[:created_at] %></li>
+          </ul>
+        </div>
+      <% end %>
+      <%# <%= task_list.sort_by { |date| date.created_at } %>
     <% end %>
-    <%= task_list.sort_by { |date| date.created_at } %>
-
   </div>
 </div>
 
