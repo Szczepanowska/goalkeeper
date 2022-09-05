@@ -1,13 +1,12 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="container">
   <div class="goalscontainer">
-    <h1 class="header-subtitle"><% current_user.email %></h1>
-    <h1 class="header-subtitle">Hello, <%= current_user.user_name.capitalize %></h1>
+    <h1 class="default-header">Hello, <%= current_user.user_name.capitalize %></h1>
   </div>
 
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
-    <h2>Goals</h2>
+    <h2 class="header-subtitle">Goals</h2>
     <%= render "goals/goal_card", goal: @goals %>
   </div>
 
