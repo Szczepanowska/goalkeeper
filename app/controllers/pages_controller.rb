@@ -7,7 +7,6 @@ class PagesController < ApplicationController
       @goals = Goal.where(category: params[:name][:category])
     elsif current_user.present?
       @goals = Goal.where("user_id != #{current_user.id}")
-      raise
     else
       @goals = Goal.all
     end
