@@ -1,4 +1,6 @@
-<div class="container60">
+<div class="goalscontainer">
+
+  <%# Goal description and image %>
   <div class="showgoalscontainer">
     <div class="m-5">
       <h1><%= @goal.name %></h1>
@@ -6,37 +8,43 @@
     </div>
     <img src="<%= @goal.category_url %>"/>
   </div>
-  <%# <p>Started the project at <%= @goal.start_date %>
-    <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
-        <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
-    </div>
+
+  <%# progress bar %>
+  <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
+  </div>
+
+  <%# Tasks display %>
   <ul class="tasksgrid">
     <% @goal.tasks.sort.each do |task| %>
-          <p><%= task.name %></p>
+      <p><%= task.name %></p>
       <li class="tasks">
       <% if  task.completed == false %>
-          <% if policy(task).completed? %>
-          <%= link_to "Mark as done", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %>
-          <%= render "shared/flashes" %>
-      <% end %>
+        <% if policy(task).completed? %>
+          <%= link_to "Mark as done", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %> <%# , data: {turbo_method: :patch}  %>
+        <% end %>
       <% else %>
         <% if policy(task).incomplete? %>
           <%= link_to "Not done yet", incomplete_path(task), data: {turbo_method: :patch}, :class => "btn btn-danger mr-3" %> <%# , data: {turbo_method: :patch}  %>
         <% end %>
-        <% end %>
+      <% end %>
       <% if policy(@goal).destroy? %>
         <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
       <% end %>
-    </li>
+      </li>
     <% end %>
   </ul>
-    <% if current_user && @like %>
-        <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
-    <% else %>
-        <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
-    <% end %>
+
+    <%# like section %>
+  <% if current_user && @like %>
+    <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
+  <% else %>
+    <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
+  <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%></p>
+
+  <%# task CRUD %>
   <div class="d-flex justify-content-between">
     <% if policy(@task).create? %>
       <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
@@ -49,8 +57,10 @@
     <% end %>
     <%= link_to "back", :back, class: "btn btn-secondary" %>
   </div>
-      <div class="share">
-      <i class="fa-brands fa-square-whatsapp"></i>
-      <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", data: { action: "share/whatsapp/share"}%>
-      </div>
+
+  <%# share %>
+  <div class="share">
+    <i class="fa-brands fa-square-whatsapp"></i>
+    <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", data: { action: "share/whatsapp/share"}%>
+  </div>
 </div>
