@@ -35,7 +35,7 @@
         <% current_user.goals.each do |goal| %>
           <% task_list += goal.tasks %>
         <% end %>
-        <% task_list.sort_by { |date| date.created_at }.reverse.first(15).each do |task| %>
+        <% task_list.sort_by { |date| date.created_at }.reverse.first(3).each do |task| %>
           <div class="">
             <ul>
               <li class="font-small-header"><%= task[:name] %></li>

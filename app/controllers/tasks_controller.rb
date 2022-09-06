@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_goal, only: [:update]
   before_action :find_task, only: [:edit, :update, :completed, :incomplete]
+  skip_before_action :verify_authenticity_token
 
   def new
     @task = Task.new
@@ -13,14 +14,14 @@ class TasksController < ApplicationController
     authorize @task
     @task.completed = true
     @task.save
-    redirect_to goal_path(@task.goal)
+    # redirect_to goal_path(@task.goal)
   end
 
   def incomplete
     authorize @task
     @task.completed = false
     @task.save
-    redirect_to goal_path(@task.goal)
+    # redirect_to goal_path(@task.goal)
   end
 
   def create
