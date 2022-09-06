@@ -11,7 +11,7 @@
     <%= render "goals/goal_card", goal: @goals %>
   </div>
 
-  <div class="container70">
+  <div class="containerflex70">
     <% if policy(Goal).new? %>
       <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary-green" %>
     <% end %>
@@ -24,5 +24,3 @@
       <% end %>
   </div>
 </div>
-
-
