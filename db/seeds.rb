@@ -11,6 +11,7 @@ require "open-uri"
 User.destroy_all
 Goal.destroy_all
 Task.destroy_all
+Bookmark.destroy_all
 
 users = [
   {
