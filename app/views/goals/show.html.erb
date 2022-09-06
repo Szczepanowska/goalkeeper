@@ -20,7 +20,9 @@
     <% @goal.tasks.sort.each do |task| %>
       <%# logic for which complete button to use %>
       <li class="task-card">
-      <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
+      <% if current_user == @goal.user %>
+        <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
+      <% end %>
       <%# task name and delete button %>
       <p><%= task.name %></p>
       <% if policy(@goal).destroy? %>

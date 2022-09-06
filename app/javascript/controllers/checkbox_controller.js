@@ -9,6 +9,7 @@ export default class extends Controller {
   progressBar = 0
   tasks = (1 / Number(this.progressTarget.dataset.tasks))
   progress = Number(this.progressTarget.dataset.progress)
+  status = 0
 
   connect() {
     console.log(this.progressTarget)
@@ -18,6 +19,7 @@ export default class extends Controller {
   update(event) {
     let host = window.location.origin
     let mark = event.currentTarget.dataset.complete === 'false' ? 'completed' : 'incomplete'
+    event.currentTarget.dataset.complete = event.currentTarget.dataset.complete === 'false' ? 'true' : 'false'
     let url = `${host}/tasks/${event.currentTarget.id}/${mark}`
     // let tasks = (1 / Number(this.progressTarget.dataset.tasks))
     // let progress = Number(this.progressTarget.dataset.progress)
@@ -27,15 +29,16 @@ export default class extends Controller {
     this.progressTarget.style.width = newValue
     this.progressTarget.innerText = newValue
     console.log(this.progress)
-    // location.reload();
 
     fetch(url, {
       method: "PATCH",
       headers: { "Accept": "text/html"}
     })
-      .then(response => response.text())
-      .then((data) => {
-        console.log(data)
-      })
+    .then(response => response.text())
+    .then((data) => {
+      console.log(data)
+    })
+
+    // location.reload();
   }
 }
