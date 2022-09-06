@@ -15,7 +15,9 @@ Task.destroy_all
 users = [
   {
     email: "carlos.baez.fumero@gmail.com",
-    user_name: "carlosbaezfumero",
+    user_name: "Carlos Baez",
+    first_name: "Carlos",
+    last_name: "Baez",
     image: "carlos.png",
     goals: [
       {
@@ -144,6 +146,8 @@ users = [
   {
     email: "x.briglmeier@gmail.com",
     user_name: "Xaver Briglmeier",
+    first_name: "Xaver",
+    last_name: "Briglmeier",
     image: "xaver.jpg",
     goals: [
       {
@@ -252,6 +256,8 @@ users = [
   {
     email: "szczepanowska.n@gmail.com",
     user_name: "Natalia Szczepanowska",
+    first_name: "Natalia",
+    last_name: "Szczepanowska",
     image: "natalia.jpg",
     goals: [
       {
@@ -278,7 +284,9 @@ users = [
   },
   {
     email: "luizrmiug@gmail.com",
-    user_name: "Luiz",
+    user_name: "Luiz Güim",
+    first_name: "Luiz",
+    last_name: "Güim",
     image: "luiz.jpg",
     goals: [
       {
@@ -287,7 +295,7 @@ users = [
         category: "Finances",
         task: [
           "Put 1 euro in a jar every day",
-          "Chech bank statement",
+          "Check Bank statement",
           "Stop ordering food"
         ]
       },
@@ -312,7 +320,7 @@ users = [
         ]
       },
       {
-        name: "Go back to Yoga classes",
+        name: "Yoga classes",
         description: "Find a moment to relax, and enjoy more my free time",
         category: "Sports",
         task: [
@@ -332,7 +340,7 @@ users = [
         ]
       },
       {
-        name: "Go to a meditation retreat in India",
+        name: "Meditation retreat in India",
         description: "Plan it for 2025",
         category: "Growth",
         task: [
@@ -382,7 +390,7 @@ users = [
         ]
       },
       {
-        name: "Go back to CrossFit classes again",
+        name: "Go back to CrossFit classes",
         description: "Improve my health, and shape my body",
         category: "Sports",
         task: [
