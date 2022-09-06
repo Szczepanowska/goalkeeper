@@ -11,36 +11,38 @@
 
   <%# progress bar %>
   <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
-  <div class="progress">
+  <div class="progress mb-5">
     <div class="progress-bar" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
   </div>
 
   <%# Tasks display %>
   <ul class="tasksgrid">
     <% @goal.tasks.sort.each do |task| %>
-      <p><%= task.name %></p>
-      <li class="tasks">
+      <%# logic for which complete button to use %>
+      <li class="task-card">
       <% if  task.completed == false %>
         <% if policy(task).completed? %>
-          <%= link_to "Mark as done", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %>
+          <%= link_to image_tag("complete_task_vector.svg", class: "task-button"), completed_path(task), data: {turbo_method: :patch}, :class => "btn" %>
         <% end %>
       <% else %>
         <% if policy(task).incomplete? %>
-          <%= link_to "Not done yet", incomplete_path(task), data: {turbo_method: :patch}, :class => "btn btn-danger mr-3" %>
+          <%= link_to image_tag("incomplete_task_vector.svg", class: "task-button"), incomplete_path(task), data: {turbo_method: :patch}, :class => "btn" %>
         <% end %>
       <% end %>
+      <%# task name and delete button %>
+      <p><%= task.name %></p>
       <% if policy(@goal).destroy? %>
-        <%= link_to "Delete", goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
+        <%= link_to image_tag("delete_task.png", class: "task-button"), goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn" %>
       <% end %>
       </li>
     <% end %>
   </ul>
 
-    <%# like section %>
+  <%# like section %>
   <% if current_user && @like %>
-    <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
+    <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light mt-4" %>
   <% else %>
-    <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
+    <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light mt-4"%>
   <% end %>
   <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%></p>
 

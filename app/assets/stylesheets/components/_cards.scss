@@ -6,3 +6,16 @@
   border-radius: 16px;
   padding: 16px;
 }
+
+.task-card {
+  height: 8vh;
+  overflow: hidden;
+  display: flex;
+  margin: 12px 0px;
+  align-content: center;
+  // TODO: align text to center vertically
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  padding: 8px;
+}
