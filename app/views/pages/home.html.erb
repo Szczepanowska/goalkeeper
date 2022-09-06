@@ -37,7 +37,7 @@
   <div class="half-page-container">
   <h2 class="header-subtitle">Your bookmarks</h2>
   <div class="card50">
-    <% if current_user.bookmarks.present? %>
+    <% if current_user.present? && current_user.bookmarks.present? %>
       <% current_user.bookmarks.each do |bookmark| %>
         <ul>
           <li class="font-small-header" style="color: black;"><%= bookmark.goal.name %></li>
