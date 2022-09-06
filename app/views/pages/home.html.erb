@@ -36,11 +36,12 @@
           <% current_user.goals.each do |goal| %>
             <% task_list += goal.tasks %>
           <% end %>
-          <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
+          <% task_list.sort_by { |date| date.created_at }.reverse.first(3).each do |task| %>
             <div class="">
               <ul>
-                <li class="font-small-header"><%= task[:name] %></li>
-                <%# <li><%= task[:created_at] %>
+                <%= link_to goal_path(task.goal) do %>
+                  <li class="font-small-header carlos-hv"><%= task[:name] %></li>
+                <% end %>
               </ul>
             </div>
           <% end %>
@@ -57,10 +58,13 @@
         <% if current_user.present? && current_user.bookmarks.present? %>
           <% current_user.bookmarks.each do |bookmark| %>
             <ul>
-              <li class="font-small-header" style="color: black;"><%= bookmark.goal.name %></li>
+              <%= link_to goal_path(bookmark.goal) do %>
+                <li class="font-small-header carlos-hv"><%= bookmark.goal.name %></li>
+              <% end %>
             </ul>
           <% end %>
         <% end %>
+
         <% if current_user.bookmarks.empty? %>
           <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
         <% end %>
