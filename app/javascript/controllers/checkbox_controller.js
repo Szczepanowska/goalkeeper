@@ -27,6 +27,7 @@ export default class extends Controller {
     this.progressTarget.style.width = newValue
     this.progressTarget.innerText = newValue
     console.log(this.progress)
+    // location.reload();
 
     fetch(url, {
       method: "PATCH",
