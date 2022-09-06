@@ -31,7 +31,7 @@ users = [
       {
         name: "Play football",
         description: "Have some fun playing football again",
-        category: "Sport",
+        category: "Sports",
         task: [
           "Sign up for an amateur game",
           "Watch tutorial on how to play football",
@@ -99,13 +99,13 @@ users = [
         ]
       },
       {
-        name: "Look for  some food suplements",
+        name: "Look for  some food supplements",
         description: "To find a new way to be healthy",
         category: "Health",
         task: [
           "Look for some infos on internet",
           "Make an appointment with a doctor",
-          "Buy the suplement"
+          "Buy the supplement"
         ]
       },
       {
@@ -128,12 +128,22 @@ users = [
           "Buy vegetables, and fruits"
         ]
       },
+      {
+        name: "Increase my reading habit",
+        description: "Read at least 1 book every two months",
+        category: "Hobbies",
+        task: [
+          "Make a list of books of my interest",
+          "Borrow some friend's books I may like",
+          "Buy new books"
+        ]
+      }
     ]
   },
 
   {
     email: "x.briglmeier@gmail.com",
-    user_name: "Xaver B",
+    user_name: "Xaver Briglmeier",
     image: "xaver.jpg",
     goals: [
       {
@@ -179,7 +189,7 @@ users = [
       {
         name: "Write a Formula-1 blog",
         description: "Use my skills to freelance a cool project",
-        category: "Hobbys",
+        category: "Hobbies",
         task: [
           "Search for nice articles",
           "Develope a webpage",
@@ -219,7 +229,7 @@ users = [
       {
         name: "Start yoga or some relax activity",
         description: "To find a moment to relax during work-days",
-        category: "Hobbys",
+        category: "Hobbies",
         task: [
           "Search for some opportunities on Slack channel",
           "Apply and talk to people",
@@ -235,13 +245,13 @@ users = [
           "Put 10 euros every day in a Jar",
           "Open a excel sheet to write every saving"
         ]
-      },
+      }
     ]
   },
 
   {
     email: "szczepanowska.n@gmail.com",
-    user_name: "Natalia SZCZCSZCZS",
+    user_name: "Natalia Szczepanowska",
     image: "natalia.jpg",
     goals: [
       {
@@ -255,16 +265,6 @@ users = [
         ]
       },
       {
-        name: "Prepare Christmas gifts",
-        description: "Trying to avoid december shoping rush",
-        category: "Lifestyle",
-        task: [
-          "Check Amazon",
-          "Tell kids to write christmas list",
-          "Buy wrapping paper"
-        ]
-      },
-      {
         name: "Start my E-learning platform",
         description: "To help people struggling at learning new skills",
         category: "Selfdevelopement",
@@ -273,12 +273,12 @@ users = [
           "Make a schema on Figma",
           "Look for some other developers to hire"
         ]
-      },
+      }
     ]
   },
   {
     email: "luizrmiug@gmail.com",
-    user_name: "luiz",
+    user_name: "Luiz",
     image: "luiz.jpg",
     goals: [
       {
@@ -294,7 +294,7 @@ users = [
       {
         name: "Start playing chess",
         description: "Learn how to play the game",
-        category: "Hobbys",
+        category: "Hobbies",
         task: [
           "Watch youtube tutorials",
           "Buy chess board",
@@ -314,7 +314,7 @@ users = [
       {
         name: "Go back to Yoga classes",
         description: "Find a moment to relax, and enjoy more my free time",
-        category: "Selfdevelopement",
+        category: "Sports",
         task: [
           "Look for some school in Munich",
           "Ask some friend that may be interested to join me",
@@ -354,7 +354,7 @@ users = [
       {
         name: "Get a professional camera",
         description: "Start a new hobby",
-        category: "Hobbys",
+        category: "Hobbies",
         task: [
           "Check online blogs to get some tips",
           "Save 1 month of salary",
@@ -374,13 +374,23 @@ users = [
       {
         name: "Increase my run pace",
         description: "Be able to run the next Berlin marathon",
-        category: "Sport",
+        category: "Sports",
         task: [
           "Hire a running coach",
           "Start a diet to keep weight",
           "Get tips from friends that have done it before"
         ]
       },
+      {
+        name: "Go back to CrossFit classes again",
+        description: "Improve my health, and shape my body",
+        category: "Sports",
+        task: [
+          "Look for a CrossFit box in Munich",
+          "Pay for the subscription",
+          "Get new shoes"
+        ]
+      }
     ]
   }
 ]
