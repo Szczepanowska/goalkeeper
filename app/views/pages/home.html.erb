@@ -63,8 +63,5 @@
 
 <div class="goalscontainer">
   <h2 class="header-subtitle">Get inspired with other users goals:</h2>
-  <% if current_user.present? %>
-    <% @goals = Goal.where("user_id != #{current_user.id}") %>
-  <% end %>
   <%= render "goals/goal_card", goal: @goals %>
 </div>
