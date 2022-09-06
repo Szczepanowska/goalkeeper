@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :show ]
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   def index

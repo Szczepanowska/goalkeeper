@@ -11,7 +11,7 @@ class Goal < ApplicationRecord
       url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504092.png' },
     { name: 'Education', url: 'https://cdn-icons-png.flaticon.com/512/4645/4645229.png',
       url2: 'https://cdn-icons-png.flaticon.com/512/7503/7503970.png' },
-    { name: 'Selfdevelopement', url: 'https://cdn-icons-png.flaticon.com/512/6186/6186537.png',
+    { name: 'Growth', url: 'https://cdn-icons-png.flaticon.com/512/6186/6186537.png',
       url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504051.png' },
     { name: 'Sport', url: 'https://cdn-icons-png.flaticon.com/512/1198/1198314.png',
       url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504065.png' },
@@ -41,8 +41,4 @@ class Goal < ApplicationRecord
       self.completed_tasks.count.fdiv(self.tasks.count)
     end
   end
-
-  # def completed_goals
-  #   self.status = "completed" if self.completed_tasks == 1
-  # end
 end
