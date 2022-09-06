@@ -14,7 +14,7 @@
 </div>
 
 <div class="categories-container">
-  <h2> Discover our goals categories </h2>
+  <h2 class="header-subtitle"> Discover our goals categories </h2>
   <div class="iconcontainer">
   <% Goal::CATEGORIES.each do |c| %>
     <%= simple_form_for :name, url: root_path, method: :get do |f| %>
@@ -35,7 +35,7 @@
         <% current_user.goals.each do |goal| %>
           <% task_list += goal.tasks %>
         <% end %>
-        <% task_list.sort_by { |date| date.created_at }.reverse.first(3).each do |task| %>
+        <% task_list.sort_by { |date| date.created_at }.reverse.first(5).each do |task| %>
           <div class="">
             <ul>
               <li class="font-small-header"><%= task[:name] %></li>
@@ -63,5 +63,8 @@
 
 <div class="goalscontainer">
   <h2 class="header-subtitle">Get inspired with other users goals:</h2>
+  <% if current_user.present? %>
+    <% @goals = Goal.where("user_id != #{current_user.id}") %>
+  <% end %>
   <%= render "goals/goal_card", goal: @goals %>
 </div>

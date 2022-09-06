@@ -14,14 +14,16 @@ class TasksController < ApplicationController
     authorize @task
     @task.completed = true
     @task.save
-    # redirect_to goal_path(@task.goal)
+    flash[:info] = "You completed: #{@task.name}"
+    redirect_to goal_path(@task.goal)
   end
 
   def incomplete
     authorize @task
     @task.completed = false
     @task.save
-    # redirect_to goal_path(@task.goal)
+    flash[:keepon] = "Not done with #{@task.name}, yet!"
+    redirect_to goal_path(@task.goal)
   end
 
   def create
