@@ -13,6 +13,19 @@
   <% end %>
 </div>
 
+<div class="categories-container">
+  <h2> Discover our goals categories </h2>
+  <div class="iconcontainer">
+  <% Goal::CATEGORIES.each do |c| %>
+    <%= simple_form_for :name, url: root_path, method: :get do |f| %>
+      <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
+      <%= image_submit_tag c[:url] %>
+      <%= c[:name] %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+
 <div class="recent-tasks-container d-flex">
   <div class="half-page-container">
     <h2 class="header-subtitle">Your recent tasks</h2>
@@ -46,15 +59,6 @@
     <% end %>
   </div>
   </div>
-</div>
-
-<div class="iconcontainer">
-  <% Goal::CATEGORIES.each do |c| %>
-    <%= simple_form_for :name, url: root_path, method: :get do |f| %>
-      <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
-        <%= image_submit_tag c[:url] %>
-    <% end %>
-  <% end %>
 </div>
 
 <div class="goalscontainer">

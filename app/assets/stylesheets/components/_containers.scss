@@ -15,7 +15,7 @@
 .iconcontainer {
   width: 60%;
   justify-content: center;
-  margin: 24px auto;
+  margin: 8px auto;
   display: flex;
 }
 
@@ -24,6 +24,12 @@
   margin-left: 16px;
   margin-right: 16px;
   }
+
+.categories-container {
+  display: block;
+  text-align: center;
+
+}
 
 .half-page-container {
   width: 50%;
