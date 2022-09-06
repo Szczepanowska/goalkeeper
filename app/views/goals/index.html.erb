@@ -20,9 +20,10 @@
   <div class="goalscontainer">
     <h2> Your badges: </h2>
       <% @user_completed_goals.each do |g| %>
+      <div style="display:inline-block;">
         <img src="<%= g.category_url_badge %>" width="88"/>
+        <p><%= g.name %></p>
+      </div>
       <% end %>
   </div>
 </div>
-
-

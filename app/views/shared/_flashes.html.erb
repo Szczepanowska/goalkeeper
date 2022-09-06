@@ -5,10 +5,21 @@
     </button>
   </div>
 <% end %>
+
 <% if alert %>
   <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
     <%= alert %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
     </button>
   </div>
+<% end %>
+
+<% if badge %>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <%= badge %>
+    <span><strong>Yay!</strong> 🎉 you successfully signed in to our service.</span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div
 <% end %>

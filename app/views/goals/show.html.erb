@@ -17,7 +17,8 @@
       <li class="tasks">
       <% if  task.completed == false %>
           <% if policy(task).completed? %>
-          <%= link_to "Mark as done", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %> <%# , data: {turbo_method: :patch}  %>
+          <%= link_to "Mark as done", completed_path(task), data: {turbo_method: :patch}, :class => "btn btn-success mr-3" %>
+          <%= render "shared/flashes" %>
       <% end %>
       <% else %>
         <% if policy(task).incomplete? %>
