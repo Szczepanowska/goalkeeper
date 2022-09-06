@@ -5,9 +5,11 @@
     <div class="m-5">
       <h1><%= @goal.name %></h1>
       <h2><%= @goal.description %></h2>
+      <p>by: <%= @user.user_name %></p>
     </div>
     <img src="<%= @goal.category_url %>"/>
   </div>
+  <br>
 
   <%# progress bar %>
   <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
