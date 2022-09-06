@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_goal, only: [:update]
   before_action :find_task, only: [:edit, :update, :completed, :incomplete]
+  skip_before_action :verify_authenticity_token
 
   def new
     @task = Task.new

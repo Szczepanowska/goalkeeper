@@ -1,4 +1,4 @@
-<div class="goalscontainer">
+<div class="goalscontainer" data-controller="checkbox">
 
   <%# Goal description and image %>
   <div class="showgoalscontainer">
@@ -12,7 +12,7 @@
   <%# progress bar %>
   <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
   <div class="progress mb-5">
-    <div class="progress-bar" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
+    <div class="progress-bar" data-checkbox-target='progress' data-tasks="<%= @goal.tasks.count %>" data-progress="<%= @goal.progress %>" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
   </div>
 
   <%# Tasks display %>
@@ -20,15 +20,7 @@
     <% @goal.tasks.sort.each do |task| %>
       <%# logic for which complete button to use %>
       <li class="task-card">
-      <% if  task.completed == false %>
-        <% if policy(task).completed? %>
-          <%= link_to image_tag("complete_task_vector.svg", class: "task-button"), completed_path(task), data: {turbo_method: :patch}, :class => "btn" %>
-        <% end %>
-      <% else %>
-        <% if policy(task).incomplete? %>
-          <%= link_to image_tag("incomplete_task_vector.svg", class: "task-button"), incomplete_path(task), data: {turbo_method: :patch}, :class => "btn" %>
-        <% end %>
-      <% end %>
+      <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
       <%# task name and delete button %>
       <p><%= task.name %></p>
       <% if policy(@goal).destroy? %>
