@@ -91,7 +91,7 @@ users = [
       {
         name: "Start writing a diary",
         description: "Increasing my self-knowledge",
-        category: "Selfdevelopement",
+        category: "Growth",
         task: [
           "Buy a nice diary",
           "Buy new pencils",
@@ -179,7 +179,7 @@ users = [
       {
         name: "Write my 2023 year plan",
         description: "To organize my personal projects for next year",
-        category: "Selfdevelopement",
+        category: "Growth",
         task: [
           "Buy a nice notebook",
           "Buy new pencils",
@@ -209,7 +209,7 @@ users = [
       {
         name: "Reading more newspaper",
         description: "To increase critical skills",
-        category: "Selfdevelopement",
+        category: "Growth",
         task: [
           "Sign-up a online newspaper",
           "Read every day for a whole week",
@@ -267,7 +267,7 @@ users = [
       {
         name: "Start my E-learning platform",
         description: "To help people struggling at learning new skills",
-        category: "Selfdevelopement",
+        category: "Growth",
         task: [
           "Write a plan",
           "Make a schema on Figma",
@@ -334,7 +334,7 @@ users = [
       {
         name: "Go to a meditation retreat in India",
         description: "Plan it for 2025",
-        category: "Selfdevelopement",
+        category: "Growth",
         task: [
           "Look for nice, and safe places",
           "Contact the person responsible for the retreate",

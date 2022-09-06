@@ -14,7 +14,7 @@
 </div>
 
 <div class="categories-container">
-  <h2> Discover our goals categories </h2>
+  <h2 class="header-subtitle"> Discover our goals categories </h2>
   <div class="iconcontainer">
   <% Goal::CATEGORIES.each do |c| %>
     <%= simple_form_for :name, url: root_path, method: :get do |f| %>
