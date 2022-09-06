@@ -14,8 +14,11 @@ class TasksController < ApplicationController
     authorize @task
     @task.completed = true
     @task.save
-    flash[:info] = "You completed: #{@task.name}"
-    redirect_to goal_path(@task.goal)
+    # respond_to do |format|
+    #   # format.html { redirect_to goal_path(@task.goal) }
+    #   format.json
+    # end
+    # flash[:info] = "You completed: #{@task.name}"
   end
 
   def incomplete

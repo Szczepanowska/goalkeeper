@@ -11,6 +11,7 @@ export default class extends Controller {
   progress = Number(this.progressTarget.dataset.progress)
   status = 0
 
+
   connect() {
     console.log(this.progressTarget)
     console.log(this.progressTarget.dataset.tasks)
@@ -30,9 +31,10 @@ export default class extends Controller {
     this.progressTarget.innerText = newValue
     console.log(this.progress)
 
+
     fetch(url, {
       method: "PATCH",
-      headers: { "Accept": "text/html"}
+      headers: { "Accept": "application/json"}
     })
     .then(response => response.text())
     .then((data) => {
