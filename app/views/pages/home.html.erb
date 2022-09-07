@@ -16,13 +16,13 @@
 <div class="categories-container">
   <h2 class="header-subtitle"> Discover our goals categories </h2>
   <div class="iconcontainer">
-  <% Goal::CATEGORIES.each do |c| %>
-    <%= simple_form_for :name, url: root_path, method: :get do |f| %>
-      <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
-      <%= image_submit_tag c[:url] %>
-      <%= c[:name] %>
+    <% Goal::CATEGORIES.each do |c| %>
+      <%= simple_form_for :name, url: root_path, method: :get do |f| %>
+        <%= f.input :category, as: :hidden, input_html: { value: c[:name]} %>
+        <%= image_submit_tag c[:url] %>
+        <%= c[:name] %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </div>
 
@@ -65,12 +65,12 @@
           <% end %>
         <% end %>
 
-        <% if current_user.bookmarks.empty? %>
-          <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
-        <% end %>
+          <% if current_user.bookmarks.empty? %>
+            <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>
 
 <div class="goalscontainer">
