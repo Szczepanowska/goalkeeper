@@ -11,7 +11,7 @@
   text-align: center;
   vertical-align: middle;
   border-radius: 20px;
-  background-color: #17DA9D;
+  background-color: rgb(23, 218, 157);
   padding: 15px 0;
   color: white !important;
   font-weight: 800;
@@ -24,7 +24,7 @@
   max-width: 200px;
   text-align: center;
   border-radius: 16px;
-  background-color: #17DA9D;
+  background-color: rgba(23, 218, 157, 0.8);
   padding: 15px 30px;
   color: white !important;
   font-weight: 800;
@@ -35,7 +35,7 @@
 
 .btn-delete-red {
   border-radius: 16px;
-  background-color: #da3e17;
+  background-color: rgba(218, 62, 23, 0.8);
   padding: 15px 25px;
   color: white !important;
   font-weight: 800;
@@ -46,7 +46,7 @@
 
 .btn-back-grey {
   border-radius: 16px;
-  background-color: #CDCDCD;
+  background-color: rgba(205, 205, 205, 0.8);
   padding: 15px 25px;
   color: white !important;
   font-weight: 800;
@@ -57,7 +57,7 @@
 
 .btn-edit-turkis {
   border-radius: 16px;
-  background-color: #479795;
+  background-color: rgba(71, 151, 149, 0.8);
   padding: 15px 25px;
   color: white !important;
   font-weight: 800;
@@ -135,4 +135,12 @@
   border: 1px dotted #17DA9D;
   padding: 9px;
   border-radius: 8px;
+}
+
+.fa-brands.fa-square-whatsapp.fa-3x {
+  opacity: 0.75;                /* Opacity (Transparency) */
+  // color: rgba(0, 0, 0, 0.75);   /* RGBA Color (Alternative Transparency) */
+  // -webkit-filter: blur(2px);    /* Blur */
+  // -moz-filter: blur(2px);
+  // filter: blur(2px);
 }
