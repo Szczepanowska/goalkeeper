@@ -10,7 +10,6 @@ class GoalsController < ApplicationController
 
     @user_completed_goals = @goals.where(status: "completed")
     @user_current_goals = @goals.where(status: "In Progress")
-
   end
 
   def show

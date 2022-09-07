@@ -7,7 +7,7 @@ class Goal < ApplicationRecord
     { name: 'Lifestyle', url: 'https://cdn-icons-png.flaticon.com/512/706/706204.png',
       url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504004.png' },
     { name: 'Hobbies', url: 'https://cdn-icons-png.flaticon.com/512/4615/4615367.png',
-      ulr2: 'https://cdn-icons-png.flaticon.com/512/7504/7504017.png' },
+      url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504017.png' },
     { name: 'Career', url: 'https://cdn-icons-png.flaticon.com/512/8062/8062272.png',
       url2: 'https://cdn-icons-png.flaticon.com/512/7504/7504092.png' },
     { name: 'Education', url: 'https://cdn-icons-png.flaticon.com/512/4645/4645229.png',
