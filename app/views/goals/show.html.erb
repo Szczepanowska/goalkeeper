@@ -33,32 +33,39 @@
       </li>
     <% end %>
   </ul>
-
+  <%# share %>
   <%# like section %>
-  <% if current_user && @like %>
-    <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light mt-4" %>
-  <% else %>
-    <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light mt-4"%>
-  <% end %>
-  <p><%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%></p>
-
-  <%# task CRUD %>
-  <div class="d-flex justify-content-between">
-    <% if policy(@task).create? %>
-      <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn btn-primary" %>
-    <% end %>
-    <% if policy(@goal).edit? %>
-      <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-secondary" %>
-    <% end %>
-    <% if policy(@goal).destroy? %>
-      <%= link_to "Delete Goal", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger mr-3" %>
-    <% end %>
-    <%= link_to "back", :back, class: "btn btn-secondary" %>
+  <div class="social-media">
+    <div class="like">
+      <% if current_user && @like %>
+        <%= button_to image_tag("clover.png"), goal_like_path(@goal, @like), method: :delete, class: "btn btn-light" %>
+        <%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%>
+      <% else %>
+        <%= button_to image_tag("dark_clover 2 1.png"), goal_likes_path(@goal), method: :post, class: "btn btn-light"%>
+        <%= @goal.likes.count %> <%= (@goal.likes.count) == 1 ? 'Clover' : 'Clovers'%>
+      <% end %>
+    </div>
+    <div class="share d-flex justify-content-center align-items-center my-3">
+      <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", class:"whatsapp", data: { action: "share/whatsapp/share"}%>
+      <i class="fa-brands fa-square-whatsapp fa-4x mx-3"></i>
+    </div>
   </div>
 
-  <%# share %>
-  <div class="share">
-    <i class="fa-brands fa-square-whatsapp"></i>
-    <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", data: { action: "share/whatsapp/share"}%>
+  <%# task CRUD %>
+  <div class="button-container">
+    <div class="button-section-one">
+        <% if policy(@task).create? %>
+          <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn-primary-green" %>
+        <% end %>
+    </div>
+    <div class="button-section-two">
+      <%= link_to "Back", :back, class: "btn-edit-grey" %>
+      <% if policy(@goal).edit? %>
+        <%= link_to "Edit", edit_goal_path(@goal), class: "btn-edit-turkis" %>
+      <% end %>
+      <% if policy(@goal).destroy? %>
+        <%= link_to "Delete", goal_path(@goal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn-delete-red" %>
+      <% end %>
+    </div>
   </div>
 </div>
