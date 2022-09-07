@@ -2,8 +2,10 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "list" ]
+  latestBookmark = Number(this.element.dataset.last)
 
   connect() {
+    // console.log(this.element.dataset)
   }
 
   mark(event) {
@@ -13,12 +15,19 @@ export default class extends Controller {
     // console.log(goal)
     let host = window.location.origin
     let icon = event.currentTarget.querySelector("i")
-    console.log(icon)
+    // console.log(icon)
 
     if (icon.classList.contains("fa-regular")) {
       let url = `${host}/goals/${goal}/bookmarks`
       icon.classList.remove("fa-regular")
       icon.classList.add("fa-solid")
+      if (Number(icon.dataset.bookmark) > 1) {
+        this.latestBookmark = Number(icon.dataset.bookmark) + 1
+      } else {
+        this.latestBookmark = this.latestBookmark + 1
+      }
+      console.log(this.latestBookmark)
+      icon.dataset.bookmark = this.latestBookmark
       fetch(url, {
         method: "POST",
         headers: { "Accept": "text/html"}
