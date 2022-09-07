@@ -20,7 +20,7 @@
           <div class="percentage"><%= goal.progress > 0 ? (goal.progress * 100).round : 0 %> %</div>
           <div class="datedue">
             <h3>Date due:</h3>
-            <%= goal.tasks.count %> Tasks until <%= goal.end_date %>
+            <%= goal.tasks.count %> Tasks until <%= goal.end_date.strftime("%-d %b %Y") %>
           </div>
       </div>
     <% end %>
