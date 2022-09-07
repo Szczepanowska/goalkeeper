@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_131912) do
     t.string "name"
     t.text "description"
     t.string "category"
-    t.string "status"
+    t.string "status", default: "In Progress"
     t.date "start_date"
     t.date "end_date"
     t.bigint "user_id", null: false
