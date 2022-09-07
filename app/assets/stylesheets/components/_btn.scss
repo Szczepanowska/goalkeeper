@@ -4,19 +4,11 @@
 }
 
 .btn-primary-green-main {
-  width: 227px;
-  height: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 20px;
+  border-radius: 8px;
   background-color: rgb(23, 218, 157);
-  padding: 15px 0;
+  padding: 25px 25px;
   color: white !important;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 16px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -73,7 +65,7 @@
   text-align: center;
   vertical-align: middle;
   border: 1px solid #17DA9D;
-  border-radius: 20px;
+  border-radius: 4px;
   background-color: white;
   padding: 15px 0;
   color: #17DA9D !important;

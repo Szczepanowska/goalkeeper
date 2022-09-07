@@ -1,0 +1,38 @@
+.card-product-own {
+  max-width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 16px;
+}
+
+.card-product-own img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+  margin: 16px;
+}
+
+.card-product-own h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #17DA9D;
+}
+
+.card-product-own p {
+  color: #090642;
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-own .card-product-infos-own {
+  padding: 16px;
+  width: 25%;
+}
