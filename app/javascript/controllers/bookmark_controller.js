@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = [ "list" ]
 
   connect() {
-    // console.log(this.element);
   }
 
   mark(event) {
