@@ -1,8 +1,10 @@
 .containerflex70 {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  // margin: 0;
+  // padding: 0;
 }
 
 .container70 {
@@ -20,7 +22,6 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   margin: 5px;
   padding: 10px;
-
   border-radius: 8px;
 }
 
@@ -40,7 +41,6 @@
 .categories-container {
   display: block;
   text-align: center;
-
 }
 
 .half-page-container {
@@ -66,27 +66,25 @@
 }
 
 .indexcontainer {
+  max-width: 90%;
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  align-items: flex-start
+  flex-direction: column;
+
+  justify-content: space-between;
 }
 
+.doesntmatter {
+
+}
 .badges-container {
-  display: flex;
-  position: relative;
-  right: 8px;
-  top: 64px;
+
 }
-
-
 .usercontainer {
   justify-content: space-between;
 }
 
 .goalscontainer {
   width: 70%;
-  justify-content: center;
   margin: 0 auto;
   color: #090642;
 

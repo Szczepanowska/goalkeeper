@@ -1,27 +1,24 @@
 <% goals.each do |goal| %>
   <div style="position: relative;">
     <%= link_to goal_path(goal) do  %>
-      <div class="card-product">
+      <div class="card-product-own">
         <img src="<%= goal.category_url %>"/>
-        <div class="card-product-infos">
+
+        <div class="card-product-infos-own">
           <h2> <%= goal.name %> </h2>
-          <%#= goal.tasks.first.name if goal.tasks.count > 0  %>
           <p><%= goal.likes.count %> <%= (goal.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-            <%# <ul> %>
-              <%# goal.tasks.each do |task| %>
-              <%#= <li>  task.name</li> %>
-              <%# end %>
-            <%# </ul> %>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= goal.progress > 0 ? (goal.progress * 100).round : 0 %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <div class="percentage"><%= goal.progress > 0 ? (goal.progress * 100).round : 0 %> %</div>
-          <div class="datedue">
-            <h3>Date due:</h3>
-            <%= goal.tasks.count %> Tasks until <%= goal.end_date %>
-          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: <%= goal.progress > 0 ? (goal.progress * 100).round : 0 %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="percentage"><%= goal.progress > 0 ? (goal.progress * 100).round : 0 %> %</div>
+
+        <div class="datedue">
+          <h3>Date due:</h3>
+          <%= goal.tasks.count %> Tasks until <%= goal.end_date %>
+        </div>
       </div>
     <% end %>
 <% end %>
