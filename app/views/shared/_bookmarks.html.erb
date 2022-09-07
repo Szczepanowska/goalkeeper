@@ -1,13 +1,13 @@
-<div class="card50" data-bookmark-target="list">
-          <% if current_user.present? && current_user.bookmarks.present? %>
-            <% bookmark_info.each do |bookmark| %>
-              <ul>
-                <li class="font-small-header carlos-hv"><%= link_to bookmark.goal.name, goal_path(bookmark.goal) %> </li>
-              </ul>
-            <% end %>
-          <% end %>
+<div class="card50 overflow-auto" data-bookmark-target="list">
+  <% if current_user.present? && current_user.bookmarks.present? %>
+    <% bookmark_info.reverse.each do |bookmark| %>
+      <ul>
+        <li class="font-small-header carlos-hv"><%= link_to bookmark.goal.name, goal_path(bookmark.goal) %> </li>
+      </ul>
+    <% end %>
+  <% end %>
 
-          <% if current_user.bookmarks.empty? %>
-            <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
-          <% end %>
-        </div>
+  <% if current_user.bookmarks.empty? %>
+    <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
+  <% end %>
+</div>

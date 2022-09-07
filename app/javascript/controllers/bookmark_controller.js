@@ -13,9 +13,9 @@ export default class extends Controller {
     let goal = event.currentTarget.dataset.id
     // console.log(goal)
     let host = window.location.origin
-
     let icon = event.currentTarget.querySelector("i")
     console.log(icon)
+
     if (icon.classList.contains("fa-regular")) {
       let url = `${host}/goals/${goal}/bookmarks`
       icon.classList.remove("fa-regular")
