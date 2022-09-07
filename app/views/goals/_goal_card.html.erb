@@ -34,7 +34,7 @@
           <% end %>
         <% else %>
           <%= link_to goal_bookmarks_path(goal), data: {turbo_method: :post} do  %>
-            <i class="fa-regular fa-bookmark fa-xl bookmark-position"></i>
+            <i class="fa-regular fa-bookmark fa-xl bookmark-position" data-bookmark="0"></i>
           <% end %>
         <% end %>
       <% end %>
