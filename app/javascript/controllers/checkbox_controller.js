@@ -18,6 +18,8 @@ export default class extends Controller {
     console.log(this.progressTarget.style.width)
   }
   update(event) {
+    let flash = document.querySelector('.alert-dismissible')
+    if (flash) flash.remove()
     let host = window.location.origin
     let mark = event.currentTarget.dataset.complete === 'false' ? 'completed' : 'incomplete'
     event.currentTarget.dataset.complete = event.currentTarget.dataset.complete === 'false' ? 'true' : 'false'
@@ -34,11 +36,12 @@ export default class extends Controller {
 
     fetch(url, {
       method: "PATCH",
-      headers: { "Accept": "application/json"}
+      headers: { "Accept": "text/plain"}
     })
     .then(response => response.text())
     .then((data) => {
-      console.log(data)
+
+      this.element.insertAdjacentHTML("beforebegin", data)
     })
 
     // location.reload();
