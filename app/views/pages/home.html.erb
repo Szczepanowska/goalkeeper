@@ -26,54 +26,44 @@
   </div>
 </div>
 
-<% if current_user.present? %>
-  <div class="recent-tasks-container d-flex">
-    <div class="half-page-container">
-      <h2 class="header-subtitle text-center">Your recent tasks</h2>
-      <div class="card50">
-        <% task_list = [] %>
-        <% if current_user.present? %>
-          <% current_user.goals.each do |goal| %>
-            <% task_list += goal.tasks %>
+<div data-controller="bookmark">
+  <% if current_user.present? %>
+    <div class="recent-tasks-container d-flex">
+      <div class="half-page-container">
+        <h2 class="header-subtitle text-center">Your recent tasks</h2>
+        <div class="card50">
+          <% task_list = [] %>
+          <% if current_user.present? %>
+            <% current_user.goals.each do |goal| %>
+              <% task_list += goal.tasks %>
+            <% end %>
+            <% task_list.sort_by { |date| date.created_at }.reverse.first(3).each do |task| %>
+              <div class="">
+                <ul>
+                  <%= link_to goal_path(task.goal) do %>
+                    <li class="font-small-header carlos-hv"><%= task[:name] %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
           <% end %>
-          <% task_list.sort_by { |date| date.created_at }.reverse.first(3).each do |task| %>
-            <div class="">
-              <ul>
-                <%= link_to goal_path(task.goal) do %>
-                  <li class="font-small-header carlos-hv"><%= task[:name] %></li>
-                <% end %>
-              </ul>
-            </div>
+          <% if task_list.empty? %>
+            <p class="font-small-header" style="margin: 0 !important;">You have no tasks yet. Go to your profile to create one!</p>
           <% end %>
-        <% end %>
-        <% if task_list.empty? %>
-          <p class="font-small-header" style="margin: 0 !important;">You have no tasks yet. Go to your profile to create one!</p>
-        <% end %>
+        </div>
+      </div>
+
+      <div class="half-page-container">
+        <h2 class="header-subtitle text-center">Your bookmarks</h2>
+        <%= render(partial: "shared/bookmarks", locals: {bookmark_info: current_user.bookmarks}) %>
+
+
       </div>
     </div>
+  <% end %>
 
-    <div class="half-page-container">
-      <h2 class="header-subtitle text-center">Your bookmarks</h2>
-      <div class="card50">
-        <% if current_user.present? && current_user.bookmarks.present? %>
-          <% current_user.bookmarks.each do |bookmark| %>
-            <ul>
-              <%= link_to goal_path(bookmark.goal) do %>
-                <li class="font-small-header carlos-hv"><%= bookmark.goal.name %></li>
-              <% end %>
-            </ul>
-          <% end %>
-        <% end %>
-
-        <% if current_user.bookmarks.empty? %>
-          <p class="font-small-header" style="margin: 0 !important;">You have no bookmarks yet <i class="fa-regular fa-bookmark fa-xl"></i></p>
-        <% end %>
-      </div>
-    </div>
+  <div class="goalscontainer">
+    <h2 class="header-subtitle">Get inspired with other users goals:</h2>
+    <%= render "goals/goal_card", goal: @goals %>
   </div>
-<% end %>
-
-<div class="goalscontainer">
-  <h2 class="header-subtitle">Get inspired with other users goals:</h2>
-  <%= render "goals/goal_card", goal: @goals %>
 </div>

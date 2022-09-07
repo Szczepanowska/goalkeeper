@@ -9,3 +9,6 @@ application.register("checkbox", CheckboxController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import BookmarkController from "./bookmark_controller"
+application.register("bookmark", BookmarkController)
