@@ -33,6 +33,7 @@
       </li>
     <% end %>
   </ul>
+
   <%# share %>
   <%# like section %>
   <div class="social-media">
@@ -46,8 +47,8 @@
       <% end %>
     </div>
     <div class="share d-flex justify-content-center align-items-center my-3">
-      <%= link_to "Share your goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", class:"whatsapp", data: { action: "share/whatsapp/share"}%>
-      <i class="fa-brands fa-square-whatsapp fa-4x mx-3"></i>
+        <%= link_to "Share goal via Whatsapp" , "https://wa.me/?text=#{@goal.name}", class:"whatsapp", data: { action: "share/whatsapp/share"}%>
+        <i class="fa-brands fa-square-whatsapp fa-4x mx-3"></i>
     </div>
   </div>
 
@@ -59,7 +60,7 @@
         <% end %>
     </div>
     <div class="button-section-two">
-      <%= link_to "Back", :back, class: "btn-edit-grey" %>
+      <%= link_to "Back", :back, class: "btn-back-grey" %>
       <% if policy(@goal).edit? %>
         <%= link_to "Edit", edit_goal_path(@goal), class: "btn-edit-turkis" %>
       <% end %>
