@@ -26,7 +26,8 @@
   </div>
 </div>
 
-<div data-controller="bookmark" data-last="<%= Bookmark.last.id %>" data-temp="22">
+
+<div data-controller="bookmark" data-last="<%= Bookmark.last.id %>">
   <% if current_user.present? %>
     <div class="recent-tasks-container d-flex">
       <div class="half-page-container">
@@ -58,7 +59,7 @@
         <%= render(partial: "shared/bookmarks", locals: {bookmark_info: current_user.bookmarks}) %>
       </div>
     </div>
-  <% end %>
+<% end %>
   <p></p>
   <div class="goalscontainer">
     <h2 class="header-subtitle">Get inspired with other users goals:</h2>
