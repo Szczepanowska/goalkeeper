@@ -31,6 +31,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmarks = Bookmark.all
+    p @bookmark.id
     @bookmark.destroy
     render(partial: "shared/bookmarks", locals: { bookmark_info: @bookmarks })
     # redirect_to root_path, status: :see_other

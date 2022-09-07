@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   mark(event) {
+    console.log("abc", this.element.dataset)
     event.preventDefault()
     // console.log(event)
     let goal = event.currentTarget.dataset.id
@@ -26,7 +27,7 @@ export default class extends Controller {
       } else {
         this.latestBookmark = this.latestBookmark + 1
       }
-      console.log(this.latestBookmark)
+      console.log("latestId", this.latestBookmark)
       icon.dataset.bookmark = this.latestBookmark
       fetch(url, {
         method: "POST",

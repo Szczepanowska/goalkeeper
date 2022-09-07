@@ -13,6 +13,7 @@ Goal.destroy_all
 Task.destroy_all
 Bookmark.destroy_all
 
+
 users = [
   {
     email: "carlos.baez.fumero@gmail.com",
@@ -427,5 +428,7 @@ users.each do |user_input|
     end
   end
 end
+
+Bookmark.create(user: User.first, goal: Goal.last)
 
 puts "Finished!"
