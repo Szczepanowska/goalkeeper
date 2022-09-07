@@ -53,3 +53,14 @@
     text-decoration: none !important;
   }
 }
+
+.indexcontainer {
+  display: flex;
+  align-items: center;
+}
+
+.badges-container {
+  display:block;
+  position: relative;
+  right: 56px;
+}
