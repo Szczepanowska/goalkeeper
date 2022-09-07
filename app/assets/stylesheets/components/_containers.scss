@@ -68,12 +68,19 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  align-items: flex-start
 }
 
 .badges-container {
-  display:block;
+  display: flex;
   position: relative;
-  right: 56px;
+  right: 8px;
+  top: 64px;
+}
+
+.just-bagdes-container {
+  justify-content: center;
+  border: solid black;
 }
 
 .usercontainer {
