@@ -62,6 +62,7 @@
   <p></p>
   <div class="goalscontainer">
     <h2 class="header-subtitle">Get inspired with other users goals:</h2>
+    <% @goals = @goals.first(10) %>
     <%= render "goals/goal_card", goal: @goals %>
   </div>
 </div>
