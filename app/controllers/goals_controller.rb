@@ -9,6 +9,8 @@ class GoalsController < ApplicationController
     @tasks = Task.find_by(goal_id: @goals)
 
     @user_completed_goals = @goals.where(status: "completed")
+    @user_current_goals = @goals.where(status: "In Progress")
+
   end
 
   def show

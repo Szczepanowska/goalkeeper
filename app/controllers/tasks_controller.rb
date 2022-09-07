@@ -12,18 +12,22 @@ class TasksController < ApplicationController
 
   def completed
     authorize @task
-    @task.completed = true
-    @task.save
-    flash[:info] = "You completed: #{@task.name}"
-    redirect_to goal_path(@task.goal)
+    @task.update(completed: true)
+    @info = "You completed: #{@task.name}"
+    respond_to do |format|
+      format.html { redirect_to goal_path(@task.goal) }
+      format.text { render partial: "shared/info", locals: { info: @info }, formats: [:html] }
+    end
   end
 
   def incomplete
     authorize @task
-    @task.completed = false
-    @task.save
-    flash[:keepon] = "Not done with #{@task.name}, yet!"
-    redirect_to goal_path(@task.goal)
+    @task.update(completed: false)
+    @info = "Not done with: #{@task.name} yet"
+    respond_to do |format|
+      format.html { redirect_to goal_path(@task.goal) }
+      format.text { render partial: "shared/keepon", locals: { keepon: @info }, formats: [:html] }
+    end
   end
 
   def create

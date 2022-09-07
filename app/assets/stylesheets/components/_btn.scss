@@ -1,16 +1,146 @@
-.btn-primary-green {
+.task-button {
+  height: 20px;
+  border-radius: 50%;
+}
+
+.btn-primary-green-main {
   width: 227px;
   height: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  vertical-align: middle;
   border-radius: 20px;
-  background-color: #17DA9D;
+  background-color: rgb(23, 218, 157);
   padding: 15px 0;
-  color: white;
+  color: white !important;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-primary-green {
+  max-width: 200px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: rgba(23, 218, 157, 0.8);
+  padding: 15px 30px;
+  color: white !important;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-delete-red {
+  border-radius: 16px;
+  background-color: rgba(218, 62, 23, 0.8);
+  padding: 15px 25px;
+  color: white !important;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-back-grey {
+  border-radius: 16px;
+  background-color: rgba(205, 205, 205, 0.8);
+  padding: 15px 25px;
+  color: white !important;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-edit-turkis {
+  border-radius: 16px;
+  background-color: rgba(71, 151, 149, 0.8);
+  padding: 15px 25px;
+  color: white !important;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-primary-green-outline {
+  width: 100px;
+  height: 100%;
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #17DA9D;
+  border-radius: 20px;
+  background-color: white;
+  padding: 15px 0;
+  color: #17DA9D !important;
   font-weight: 800;
   font-size: 18px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.task-button {
-  height: 100%;
-  border-radius: 50%;
+.btn-primary-green-outline:hover {
+  border: 1px solid black;
+  background-color: #17DA9D;
+  color: black !important;
+}
+
+.btn-edit-turkis:hover {
+  color: black !important;
+}
+
+.btn-delete-red:hover {
+  color: black !important;
+}
+
+.btn-primary-green:hover {
+  color: black !important;
+}
+
+.btn-edit-grey:hover {
+  color: black !important;
+}
+
+.button-section-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.button-section-two {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.like {
+  text-align: center;
+  background-color: transparent;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whatsapp {
+  font-size: 16px;
+  border: 1px dotted #17DA9D;
+  padding: 9px;
+  border-radius: 8px;
+}
+
+.fa-brands.fa-square-whatsapp.fa-3x {
+  opacity: 0.75;                /* Opacity (Transparency) */
+  // color: rgba(0, 0, 0, 0.75);   /* RGBA Color (Alternative Transparency) */
+  // -webkit-filter: blur(2px);    /* Blur */
+  // -moz-filter: blur(2px);
+  // filter: blur(2px);
 }

@@ -2,24 +2,27 @@
   // width: 50%;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
   padding: 16px;
   max-height: 150px;
   min-height: 150px;
+
 }
 
 .task-card {
+  color: #090642; // #E8FBF5
+  background-color: #ffffff;
   height: 8vh;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 12px 0px;
-  // TODO: align text to center vertically
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
   padding: 8px;
+  align-items: center;
 
   p {
     margin-left: 10px;

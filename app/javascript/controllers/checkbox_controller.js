@@ -11,12 +11,15 @@ export default class extends Controller {
   progress = Number(this.progressTarget.dataset.progress)
   status = 0
 
+
   connect() {
     console.log(this.progressTarget)
     console.log(this.progressTarget.dataset.tasks)
     console.log(this.progressTarget.style.width)
   }
   update(event) {
+    let flash = document.querySelector('.alert-dismissible')
+    if (flash) flash.remove()
     let host = window.location.origin
     let mark = event.currentTarget.dataset.complete === 'false' ? 'completed' : 'incomplete'
     event.currentTarget.dataset.complete = event.currentTarget.dataset.complete === 'false' ? 'true' : 'false'
@@ -30,13 +33,15 @@ export default class extends Controller {
     this.progressTarget.innerText = newValue
     console.log(this.progress)
 
+
     fetch(url, {
       method: "PATCH",
-      headers: { "Accept": "text/html"}
+      headers: { "Accept": "text/plain"}
     })
     .then(response => response.text())
     .then((data) => {
-      console.log(data)
+
+      this.element.insertAdjacentHTML("beforebegin", data)
     })
 
     // location.reload();
