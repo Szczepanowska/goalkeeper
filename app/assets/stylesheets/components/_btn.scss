@@ -21,12 +21,11 @@
 }
 
 .btn-primary-green {
-  width: 140px;
-  height: 45px;
+  max-width: 200px;
   text-align: center;
   border-radius: 16px;
   background-color: #17DA9D;
-  padding: 15px 0;
+  padding: 15px 30px;
   color: white !important;
   font-weight: 800;
   font-size: 16px;
@@ -35,13 +34,9 @@
 }
 
 .btn-delete-red {
-  width: 140px;
-  height: 45px;
-  text-align: center;
-  vertical-align: middle;
   border-radius: 16px;
   background-color: #da3e17;
-  padding: 15px 0;
+  padding: 15px 25px;
   color: white !important;
   font-weight: 800;
   font-size: 16px;
@@ -50,13 +45,9 @@
 }
 
 .btn-back-grey {
-  width: 140px;
-  height: 45px;
-  text-align: center;
-  vertical-align: middle;
   border-radius: 16px;
   background-color: #CDCDCD;
-  padding: 15px 0;
+  padding: 15px 25px;
   color: white !important;
   font-weight: 800;
   font-size: 16px;
@@ -65,13 +56,9 @@
 }
 
 .btn-edit-turkis {
-  width: 140px;
-  height: 45px;
-  text-align: center;
-  vertical-align: middle;
   border-radius: 16px;
   background-color: #479795;
-  padding: 15px 0;
+  padding: 15px 25px;
   color: white !important;
   font-weight: 800;
   font-size: 18px;
@@ -122,7 +109,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .button-section-two {
