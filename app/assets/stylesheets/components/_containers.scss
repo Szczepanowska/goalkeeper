@@ -53,3 +53,8 @@
     text-decoration: none !important;
   }
 }
+
+.button-container {
+  display: flex;
+  flex-flow: column nowrap;
+}

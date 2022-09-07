@@ -1,16 +1,104 @@
+.task-button {
+  height: 100%;
+  border-radius: 50%;
+}
+
 .btn-primary-green {
   width: 227px;
   height: 60px;
+  text-align: center;
   border-radius: 20px;
   background-color: #17DA9D;
   padding: 15px 0;
-  color: white;
+  color: white !important;
   font-weight: 800;
   font-size: 18px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.task-button {
-  height: 100%;
-  border-radius: 50%;
+.btn-delete-red {
+  width: 227px;
+  height: 60px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #da3e17;
+  padding: 15px 0;
+  color: white !important;
+  font-weight: 800;
+  font-size: 18px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-edit-grey {
+  width: 227px;
+  height: 60px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #CDCDCD;
+  padding: 15px 0;
+  color: white !important;
+  font-weight: 800;
+  font-size: 18px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-edit-turkis {
+  width: 227px;
+  height: 60px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #479795;
+  padding: 15px 0;
+  color: white !important;
+  font-weight: 800;
+  font-size: 18px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-edit-turkis:hover {
+  color: black !important;
+}
+
+.btn-delete-red:hover {
+  color: black !important;
+}
+
+.btn-primary-green:hover {
+  color: black !important;
+}
+
+.btn-edit-grey:hover {
+  color: black !important;
+}
+
+.button-section-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-section-two {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.like {
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whatsapp {
+  font-size: 24px;
+  border: 1px dotted #17DA9D;
+  padding: 9px;
+  border-radius: 8px;
 }
