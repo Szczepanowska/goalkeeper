@@ -2,14 +2,19 @@
 <div class="goalscontainer">
     <h1 class="default-header">Hello, <%= current_user.user_name %></h1>
 </div>
+<br><br>
 
 <div class="indexcontainer">
   <%# iterating over goals and the tasks connected to this particular goal %>
   <div class="goalscontainer">
 
-  <h2 class="header-subtitle">Goals</h2>
-    <%= render "goals/goal_card", goal: @goals %>
+  <h2 class="header-subtitle">Current goals</h2>
+    <%= render "goals/goal_card", goals: @user_current_goals %>
+
+    <h2 class="header-subtitle">Completed goals</h2>
+    <%= render "goals/goal_card", goals: @user_completed_goals %>
     <div class="containerflex70">
+
     <% if policy(Goal).new? %>
       <%= link_to "Create Goal", new_goal_path, class: "btn btn-primary-green" %>
     <% end %>

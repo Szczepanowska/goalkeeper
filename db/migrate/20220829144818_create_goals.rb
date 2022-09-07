@@ -4,7 +4,7 @@ class CreateGoals < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.string :category
-      t.string :status
+      t.string :status, default: "In Progress"
       t.date :start_date
       t.date :end_date
       t.references :user, null: false, foreign_key: true
