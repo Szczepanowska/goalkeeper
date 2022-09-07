@@ -1,5 +1,5 @@
 .task-button {
-  height: 100%;
+  height: 20px;
   border-radius: 50%;
 }
 
@@ -88,6 +88,7 @@
 
 .like {
   text-align: center;
+  background-color: transparent;
 }
 
 .social-media {
@@ -97,7 +98,7 @@
 }
 
 .whatsapp {
-  font-size: 24px;
+  font-size: 16px;
   border: 1px dotted #17DA9D;
   padding: 9px;
   border-radius: 8px;
