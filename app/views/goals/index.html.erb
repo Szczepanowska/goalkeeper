@@ -1,6 +1,6 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
 <div class="goalscontainer">
-    <h1 class="default-header">Hello, <%= current_user.user_name %></h1>
+    <h1 class="default-header">Hello, <%= current_user.user_name %>.</h1>
 </div>
 <br><br>
 
@@ -16,11 +16,10 @@
     <div class="containerflex70">
 
     <% if policy(Goal).new? %>
-      <%= link_to "Create Goal", new_goal_path, class: "btn-primary-green" %>
+      <%= link_to "Create Goal", new_goal_path, class: "btn-primary-green-main" %>
     <% end %>
   </div>
   </div>
-
   <div class="badges-container">
     <div class="just-badges-container">
     <h2 class="header-subtitle"> Your badges: </h2>
