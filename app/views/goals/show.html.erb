@@ -3,16 +3,16 @@
   <%# Goal description and image %>
   <div class="showgoalscontainer">
     <div class="m-5">
-      <h1><%= @goal.name %></h1>
+      <h1><strong><%= @goal.name %></strong></h1>
       <h2><%= @goal.description %></h2>
       <p>by: <%= @user.user_name %></p>
     </div>
     <img src="<%= @goal.category_url %>"/>
   </div>
-  <br>
+  <br><br>
 
   <%# progress bar %>
-  <p><%= (@goal.end_date - Date.today).ceil %> days left until Due Date</p>
+  <p><strong><%= (@goal.end_date - Date.today).ceil %></strong> days left until Due Date</p>
   <div class="progress mb-5">
     <div class="progress-bar" data-checkbox-target='progress' data-tasks="<%= @goal.tasks.count %>" data-progress="<%= @goal.progress %>" role="progressbar" style="width: <%= (@goal.progress * 100.round) %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <%= (@goal.progress * 100).round %>%</div>
   </div>
@@ -26,7 +26,7 @@
         <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
       <% end %>
       <%# task name and delete button %>
-      <p><%= task.name %></p>
+      <p><strong><%= task.name %></strong></p>
       <% if policy(@goal).destroy? %>
         <%= link_to image_tag("delete_task.png", class: "task-button"), goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn" %>
       <% end %>
@@ -55,9 +55,9 @@
   <%# task CRUD %>
   <div class="button-container">
     <div class="button-section-one">
-        <% if policy(@task).create? %>
-          <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn-primary-green" %>
-        <% end %>
+      <% if policy(@task).create? %>
+        <%= link_to "Add Task", new_goal_task_path(@goal), class: "btn-primary-green" %>
+      <% end %>
     </div>
     <div class="button-section-two">
       <%= link_to "Back", :back, class: "btn-back-grey" %>
@@ -69,4 +69,5 @@
       <% end %>
     </div>
   </div>
+  <br><br>
 </div>
