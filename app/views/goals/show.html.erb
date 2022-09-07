@@ -22,14 +22,14 @@
     <% @goal.tasks.sort.each do |task| %>
       <%# logic for which complete button to use %>
       <li class="task-card">
-      <% if current_user == @goal.user %>
-        <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
-      <% end %>
-      <%# task name and delete button %>
-      <p><%= task.name %></p>
-      <% if policy(@goal).destroy? %>
-        <%= link_to image_tag("delete_task.png", class: "task-button"), goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn" %>
-      <% end %>
+            <% if current_user == @goal.user %>
+              <%= check_box_tag task.id, task.id, task.completed, data: { action: "click->checkbox#update", complete: "#{task.completed}"  } %>
+            <% end %>
+            <%# task name and delete button %>
+            <p><%= task.name %></p>
+            <% if policy(@goal).destroy? %>
+            <%= link_to image_tag("delete_task.png", class: "task-button"), goal_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn" %>
+            <% end %>
       </li>
     <% end %>
   </ul>
