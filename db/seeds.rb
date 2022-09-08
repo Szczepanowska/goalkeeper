@@ -442,6 +442,6 @@ users.each do |user_input|
   end
 end
 
-Bookmark.create(user: User.first, goal: Goal.last)
+Bookmark.create(user: User.find_by(email: "szczepanowska.n@gmail.com"), goal: Goal.last)
 
 puts "Finished!"
