@@ -63,6 +63,16 @@ users = [
         ]
       },
       {
+        name: "Find a job as a Software Engineer🚀",
+        description: "Got no tech background, but a huge desire to dive into coding world👨‍💻",
+        category: "Career",
+        task: [
+          "Read a coding related book",
+          "Sign up to a bootcamp",
+          "Do flashcards everyday"
+        ]
+      },
+      {
         name: "Invest some money",
         description: "To use wisely the money I got from loto",
         category: "Finances",
@@ -159,7 +169,8 @@ users = [
         task: [
           "Drink 2 liters of water per day",
           "Buy a refillable bottle",
-          "Download an app to track water intake"
+          "Download an app to track water intake",
+          "Stop drinking sweet softdrinks"
         ]
       },
       {
@@ -169,7 +180,6 @@ users = [
         task: [
           "Stop buying M&M's at the supermaket",
           "Replace industrial sugars with fruits",
-          "Sugar cheat day on Fridays"
         ]
       },
       {
@@ -208,7 +218,6 @@ users = [
         category: "Education",
         task: [
           "Look for some online plataforms",
-          "Make a list of the best 5 courses",
           "Pay, and start the course"
         ]
       },
@@ -219,7 +228,6 @@ users = [
         task: [
           "Sign-up a online newspaper",
           "Read every day for a whole week",
-          "Start taking notes of nice articles"
         ]
       },
       {
@@ -229,6 +237,7 @@ users = [
         task: [
           "Search for some opportunities on Slack channel",
           "Apply and talk to people",
+          "Work on some tiny projects",
           "Show my portfolio"
         ]
       },
@@ -249,7 +258,10 @@ users = [
         task: [
           "Open a savings account at Commerzbank",
           "Put 10 euros every day in a Jar",
-          "Open a excel sheet to write every saving"
+          "Open a excel sheet to write every saving",
+          "Stop ordering food",
+          "Watch movies at home instead if going to cinema",
+          "Cancel amazon subscription"
         ]
       }
     ]
@@ -263,23 +275,23 @@ users = [
     image: "natalia.jpg",
     goals: [
       {
-        name: "Becoming Web Developer",
-        description: "Bored with a customer service, looking for adventures 🚀",
-        category: "Career",
+        name: "Develop Healthy Eating Habits🥬",
+        description: "I want to eat healthier for 1 month at least",
+        category: "Health",
         task: [
-          "Start with online free courses",
-          "Sign up to Le Wagon",
-          "Do flashcards"
+          "Stop eating sweets",
+          "Drink 8 glasses of water everyday",
+          "Put a vegetables in your lunch"
         ]
       },
       {
-        name: "Start my E-learning platform",
-        description: "To help people struggling at learning new skills",
+        name: "Read 21 books in 2021",
+        description: "Less social media, more books 🤓📚😍",
         category: "Growth",
         task: [
-          "Write a plan",
-          "Make a schema on Figma",
-          "Look for some other developers to hire"
+          "Disable phone notifications on weekends",
+          "Download some interesting ebooks",
+          "Take a book for a road"
         ]
       }
     ]
@@ -308,7 +320,8 @@ users = [
         task: [
           "Watch youtube tutorials",
           "Buy chess board",
-          "Invite Friends to come over"
+          "Invite Friends to come over",
+          "Watch The Queen's Gambit"
         ]
       },
       {
@@ -318,7 +331,6 @@ users = [
         task: [
           "Look for a nice and fun online course",
           "Find a partner to speak Italian",
-          "Write my studies plan for the next months"
         ]
       },
       {
@@ -328,7 +340,8 @@ users = [
         task: [
           "Look for some school in Munich",
           "Ask some friend that may be interested to join me",
-          "Buy a new yoga mat"
+          "Buy a new yoga mat",
+          "Practise for 10min daily"
         ]
       },
       {
@@ -357,7 +370,6 @@ users = [
         category: "Finances",
         task: [
           "Check online for nice tv's",
-          "Make a list of the best 3",
           "Buy the product, and check date of delivery"
         ]
       },
@@ -398,7 +410,8 @@ users = [
         task: [
           "Look for a CrossFit box in Munich",
           "Pay for the subscription",
-          "Get new shoes"
+          "Get new shoes",
+          "Not give up after 1 month"
         ]
       }
     ]
