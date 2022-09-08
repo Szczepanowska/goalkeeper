@@ -2,7 +2,7 @@
   width: 70%;
   margin: 0 auto;
   padding-top: 40px;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
 
   .input {
     display: flex;
@@ -36,7 +36,7 @@
 
 
 .form-control::placeholder {
-  font-weight: bold;
-  opacity: .5;
-  color: #17DA9D; // $primary is not working
+  // font-weight: bold;
+  opacity: 1;
+  color: #090642; // $primary is not working
 }
