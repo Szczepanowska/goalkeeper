@@ -60,7 +60,7 @@
       <% end %>
     </div>
     <div class="button-section-two">
-      <%= link_to "Back", :back, class: "btn-back-grey" %>
+      <%= link_to "Back", goals_path, class: "btn-back-grey" %>
       <% if policy(@goal).edit? %>
         <%= link_to "Edit", edit_goal_path(@goal), class: "btn-edit-turkis" %>
       <% end %>

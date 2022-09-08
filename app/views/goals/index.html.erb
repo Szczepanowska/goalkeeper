@@ -1,32 +1,30 @@
 <%# This shows the Avatar the email (for now) and gives you the option to create a new goal %>
-<div class="goalscontainer">
+<div class="container70">
+
+  <div class="own-goal-banner-container">
     <h1 class="default-header">Hello, <%= current_user.user_name %></h1><%# please, dont add coma (.) here! %>
-</div>
-<br><br>
-
-<div class="indexcontainer">
-  <%# iterating over goals and the tasks connected to this particular goal %>
-  <div class="goalscontainer">
-
-  <h2 class="header-subtitle">Current goals</h2>
-    <%= render "goals/my_goal_card", goals: @user_current_goals %>
-
-    <h2 class="header-subtitle">Completed goals</h2>
-    <%= render "goals/my_goal_card", goals: @user_completed_goals %>
-    <div class="containerflex70">
     <% if policy(Goal).new? %>
-      <%= link_to "Create Goal", new_goal_path, class: "btn-primary-green-main" %>
+      <%= link_to "Create Goal", new_goal_path, class: "btn-primary-green" %>
     <% end %>
   </div>
-  <br><br>
+
   <div class="indexcontainer">
+
     <%# iterating over goals and the tasks connected to this particular goal %>
-    <div class="doesntmatter">
-      <h2 class="header-subtitle">Current goals</h2>
-      <%= render "goals/my_goal_card", goals: @user_current_goals %>
-      <h2 class="header-subtitle">Completed goals</h2>
-      <%= render "goals/my_goal_card", goals: @user_completed_goals %>
+    <div class="owngoals">
+
+      <div class="currentgoals">
+        <h2 class="header-subtitle">Current goals</h2>
+        <%= render "goals/my_goal_card", goals: @user_current_goals %>
+      </div>
+
+      <div class="completedgoals">
+        <h2 class="header-subtitle">Completed goals</h2>
+        <%= render "goals/my_goal_card", goals: @user_completed_goals %>
+      </div>
+
     </div>
+
     <div class="badges-container">
       <h2 class="header-subtitle"> Your badges </h2>
       <% @user_completed_goals.each do |g| %>
@@ -34,5 +32,7 @@
         <p> For completing: <br> <%= g.name %> </p>
       <% end %>
     </div>
+
   </div>
+
 </div>
